@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguaflex | Centro de Capacitación de Inglés y Francés En Línea</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            navy: '#0b132b',
+                            deep: '#1c2541',
+                            accent: '#3a506b',
+                            french: '#2563eb',
+                            english: '#0284c7',
+                            gold: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #0d9488 50%, #16a34a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(22, 163, 74, 0.12) 0%, transparent 40%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-navy via-brand-deep to-slate-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+        <span class="bg-brand-gold text-slate-900 text-xs px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Inscripciones Abiertas</span>
+        <span>¡Inicia tu nivel en 3 meses vía Google Meet! Obtén 15% de descuento en tu primer módulo.</span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 to-teal-500 flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold text-2xl tracking-tight text-slate-900 leading-none">Lingua<span class="text-blue-600">Flex</span></span>
+                    <span class="text-[10px] font-semibold tracking-widest text-slate-500 uppercase">Academy Online</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                <a href="#metodologia" class="hover:text-blue-600 transition-colors">Metodología</a>
+                <a href="#idiomas" class="hover:text-blue-600 transition-colors">Inglés & Francés</a>
+                <a href="#horarios" class="hover:text-blue-600 transition-colors">Horarios</a>
+                <a href="#niveles" class="hover:text-blue-600 transition-colors">Niveles (A1-C2)</a>
+                <a href="#precios" class="hover:text-blue-600 transition-colors">Inversión</a>
+                <a href="#faq" class="hover:text-blue-600 transition-colors">Preguntas</a>
+            </nav>
+
+            <!-- Actions & Contact CTA -->
+            <div class="hidden lg:flex items-center gap-4">
+                <button onclick="openQuizModal()" class="text-xs font-semibold px-3 py-2 text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-clipboard-question text-blue-600"></i> ¿Cuál es mi nivel?
+                </button>
+                <a href="#registro" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-sm shadow-md shadow-blue-500/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Clase de Prueba Gratis
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-600 hover:text-slate-900 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 flex-col gap-4 text-sm font-medium">
+            <a href="#metodologia" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-600">Metodología</a>
+            <a href="#idiomas" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-600">Cursos de Inglés y Francés</a>
+            <a href="#horarios" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-600">Horarios (Entre Semana / Sabatino)</a>
+            <a href="#niveles" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-600">Niveles A1 a C2</a>
+            <a href="#precios" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-600">Planes de Inversión</a>
+            <button onclick="openQuizModal()" class="py-2 text-left font-semibold text-blue-600 flex items-center gap-2">
+                <i class="fa-solid fa-clipboard-question"></i> Examen de ubicación rápido
+            </button>
+            <a href="#registro" class="mt-2 w-full text-center py-3 bg-blue-600 text-white rounded-xl font-semibold shadow-md">
+                Reservar Clase Gratis
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden hero-bg pt-12 pb-20 lg:pt-20 lg:pb-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs sm:text-sm font-semibold">
+                        <span class="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        Clases 100% En Vivo por Google Meet
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
+                        Aprende <span class="gradient-text">Inglés y Francés</span> a tu ritmo sin salir de casa
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Avanza con seguridad desde el nivel <strong class="text-slate-900 font-semibold">A1 hasta el C2</strong>. Cursos intensivos diseñados para resultados reales en solo <strong class="text-slate-900 font-semibold">3 meses por nivel</strong> con docentes certificados.
+                    </p>
+
+                    <!-- Feature Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-200/80 flex items-center gap-2.5">
+                            <i class="fa-solid fa-calendar-check text-teal-600 text-lg"></i>
+                            <div class="text-xs">
+                                <p class="font-bold text-slate-800">3 Meses</p>
+                                <p class="text-slate-500">Por nivel de idioma</p>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-200/80 flex items-center gap-2.5">
+                            <i class="fa-solid fa-clock text-blue-600 text-lg"></i>
+                            <div class="text-xs">
+                                <p class="font-bold text-slate-800">Horarios Flexibles</p>
+                                <p class="text-slate-500">Entre semana o sabatino</p>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-200/80 flex items-center gap-2.5 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-video text-rose-500 text-lg"></i>
+                            <div class="text-xs">
+                                <p class="font-bold text-slate-800">Google Meet</p>
+                                <p class="text-slate-500">Interacción directa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#registro" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-base rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            <span>Agendar Clase Demo Gratis</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <button onclick="openQuizModal()" class="w-full sm:w-auto px-7 py-4 bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 font-bold text-base rounded-2xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-vial text-teal-600"></i>
+                            <span>Evaluar Mi Nivel Sin Costo</span>
+                        </button>
+                    </div>
+
+                    <!-- Social Proof Ticker -->
+                    <div class="pt-6 border-t border-slate-200/70 flex items-center justify-center lg:justify-start gap-6 text-slate-500 text-xs sm:text-sm">
+                        <div class="flex -space-x-2">
+                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Estudiante">
+                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Estudiante">
+                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Estudiante">
+                        </div>
+                        <div>
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="font-medium text-slate-700">+1,500 alumnos capacitados con éxito</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Interactive Card Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative Glow -->
+                        <div class="absolute -top-6 -right-6 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
+                        <div class="absolute -bottom-6 -left-6 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl"></div>
+
+                        <!-- Main Interactive Platform Preview Card -->
+                        <div class="relative glass-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200/80 space-y-6">
+                            
+                            <!-- Virtual Room Header Simulation -->
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-video text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Aula Virtual Google Meet</h4>
+                                        <p class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
+                                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Clase en vivo activa
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="bg-blue-100 text-blue-700 font-extrabold text-xs px-2.5 py-1 rounded-lg">Módulo Activo</span>
+                            </div>
+
+                            <!-- Course Flag Selection Cards -->
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="p-4 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-200/80 flex flex-col justify-between">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-2xl">🇬🇧</span>
+                                        <span class="text-[10px] uppercase font-bold bg-blue-600 text-white px-2 py-0.5 rounded-md">Inglés</span>
+                                    </div>
+                                    <h5 class="font-bold text-slate-800 text-sm">General & Business</h5>
+                                    <p class="text-[11px] text-slate-500 mt-1">A1 hasta C2 (MCER)</p>
+                                </div>
+
+                                <div class="p-4 bg-gradient-to-br from-rose-50 to-amber-50/50 rounded-2xl border border-rose-200/80 flex flex-col justify-between">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-2xl">🇫🇷</span>
+                                        <span class="text-[10px] uppercase font-bold bg-rose-600 text-white px-2 py-0.5 rounded-md">Francés</span>
+                                    </div>
+                                    <h5 class="font-bold text-slate-800 text-sm">Français Général</h5>
+                                    <p class="text-[11px] text-slate-500 mt-1">A1 hasta C2 (CECRL)</p>
+                                </div>
+                            </div>
+
+                            <!-- Live Schedule Option Widget -->
+                            <div class="bg-slate-900 text-white rounded-2xl p-4 space-y-3">
+                                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Elige tu modalidad ideal:</p>
+                                
+                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700/80 transition-colors cursor-pointer border border-slate-700">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-calendar-days text-teal-400 text-lg"></i>
+                                        <div class="text-left">
+                                            <p class="text-xs font-bold text-white">Entre Semana</p>
+                                            <p class="text-[11px] text-slate-300">3 sesiones x 40 min / semana</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-teal-300 font-semibold bg-teal-950/80 px-2 py-1 rounded">L - M - V</span>
+                                </div>
+
+                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700/80 transition-colors cursor-pointer border border-slate-700">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fa-solid fa-bolt text-amber-400 text-lg"></i>
+                                        <div class="text-left">
+                                            <p class="text-xs font-bold text-white">Sabatino Intensivo</p>
+                                            <p class="text-[11px] text-slate-300">1 sesión x 2 horas continuas</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-amber-300 font-semibold bg-amber-950/80 px-2 py-1 rounded">Sábados</span>
+                                </div>
+                            </div>
+
+                            <!-- Duration Guarantee Highlight -->
+                            <div class="flex items-center gap-3 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs font-medium">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-base flex-shrink-0"></i>
+                                <span>Garantía de avance: Cada nivel formal se completa exactamente en <strong>3 meses</strong>.</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="bg-slate-900 text-white py-10 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <p class="text-3xl sm:text-4xl font-black text-blue-400">100%</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Clases en Vivo vía Google Meet</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-3xl sm:text-4xl font-black text-teal-400">3 Meses</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Duración Total por Nivel</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-3xl sm:text-4xl font-black text-amber-400">A1 a C2</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Marco Común Europeo (MCER)</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="text-3xl sm:text-4xl font-black text-emerald-400">8 Alumnos</p>
+                    <p class="text-xs sm:text-sm text-slate-400 font-medium">Máximo por Grupo para Interacción</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology & Value Proposition -->
+    <section id="metodologia" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">¿Por qué elegir Linguaflex?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+                    Una metodología dinámica enfocada en la fluidez hablada
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Olvídate de memorizar gramática aburrida sin hablar. Nuestro modelo conversational te prepara para comunicarte desde el primer día en situaciones del mundo real.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-blue-300 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-blue-500/20">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Google Meet Interactivo</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Accede fácilmente desde cualquier computadora o dispositivo móvil sin instalar software pesado. Clases grabadas disponibles por si necesitas repasar.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-teal-300 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-600 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-teal-500/20">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Avance Estructurado en 3 Meses</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Cada subnivel y módulo completo está calendarizado para que logres la acreditación del nivel (A1, A2, B1, B2, C1, C2) exactamente en un trimestre.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 hover:shadow-xl hover:border-amber-300 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-amber-500/20">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Preparación de Certificados</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Nuestra currícula está alineada para certificar tus conocimientos ante el Marco Común Europeo, TOEFL, IELTS (Inglés) y DELF/DALF (Francés).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Program Section (Inglés & Francés Tabs) -->
+    <section id="idiomas" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-teal-600 uppercase tracking-widest bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Oferta Académica</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Programas de Inglés y Francés</h2>
+                <p class="text-slate-600 mt-3">Selecciona el idioma de tu interés para conocer los detalles del plan de estudios.</p>
+                
+                <!-- Language Tab Switcher -->
+                <div class="inline-flex p-1.5 bg-white rounded-2xl shadow-sm border border-slate-200 mt-8 gap-2">
+                    <button id="tabEnglishBtn" onclick="switchLanguageTab('english')" class="px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 bg-blue-600 text-white shadow-md">
+                        <span class="text-lg">🇬🇧</span> Programa de Inglés
+                    </button>
+                    <button id="tabFrenchBtn" onclick="switchLanguageTab('french')" class="px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900">
+                        <span class="text-lg">🇫🇷</span> Programa de Francés
+                    </button>
+                </div>
+            </div>
+
+            <!-- English Course Content Block -->
+            <div id="englishTabContent" class="space-y-8">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1 rounded-lg">
+                            <i class="fa-solid fa-globe"></i> English Language Proficiency Program
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Aprende Inglés desde Principiante (A1) hasta Fluidez Nativa (C2)</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Diseñado para estudiantes, profesionistas y ejecutivos que buscan dominar el idioma más hablado del mundo laboral. Desarrollamos tus habilidades de habla, escucha, lectura y escritura con un enfoque práctico.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Inglés General y Negocios</h4>
+                                    <p class="text-xs text-slate-500">Vocabulario cotidiano y profesional.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Simulaciones de Conversación</h4>
+                                    <p class="text-xs text-slate-500">Entrevistas, presentaciones y viajes.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-3">
+                            <a href="#horarios" class="px-5 py-2.5 bg-blue-600 text-white rounded-xl font-bold text-sm hover:bg-blue-700 transition-colors">Ver Horarios de Inglés</a>
+                            <a href="#registro" class="px-5 py-2.5 bg-slate-100 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-200 transition-colors">Solicitar Temario</a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-gradient-to-br from-blue-900 to-slate-900 text-white p-6 sm:p-8 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-lg text-blue-300 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap"></i> Niveles disponibles en Inglés:
+                        </h4>
+                        <ul class="space-y-3 text-xs sm:text-sm">
+                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
+                                <span><strong class="text-blue-400">A1 - A2:</strong> Principiante & Elemental</span>
+                                <span class="bg-blue-900/80 px-2 py-0.5 rounded text-[11px] text-blue-300">3 meses c/u</span>
+                            </li>
+                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
+                                <span><strong class="text-teal-400">B1 - B2:</strong> Intermedio & Intermedio Alto</span>
+                                <span class="bg-teal-900/80 px-2 py-0.5 rounded text-[11px] text-teal-300">3 meses c/u</span>
+                            </li>
+                            <li class="flex items-center justify-between pb-2">
+                                <span><strong class="text-amber-400">C1 - C2:</strong> Avanzado & Maestría Nativa</span>
+                                <span class="bg-amber-900/80 px-2 py-0.5 rounded text-[11px] text-amber-300">3 meses c/u</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- French Course Content Block (Hidden by default) -->
+            <div id="frenchTabContent" class="space-y-8 hidden">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/80 grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-lg">
+                            <i class="fa-solid fa-tower-observation"></i> Programme de Langue Française
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Domina el Francés desde el nivel A1 hasta el C2</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Aprende la lengua de la diplomacia, la cultura y las oportunidades laborales internacionales en Canadá, Francia y Europa. Enseñanza paso a paso con pronunciación guiada.
+                        </p>
+
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Enfoque Comunicativo</h4>
+                                    <p class="text-xs text-slate-500">Expresión oral activa desde la 1.ª semana.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">Preparación DELF / DALF / TEF</h4>
+                                    <p class="text-xs text-slate-500">Ideal para procesos migratorios y becas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex flex-wrap gap-3">
+                            <a href="#horarios" class="px-5 py-2.5 bg-rose-600 text-white rounded-xl font-bold text-sm hover:bg-rose-700 transition-colors">Ver Horarios de Francés</a>
+                            <a href="#registro" class="px-5 py-2.5 bg-slate-100 text-slate-700 rounded-xl font-bold text-sm hover:bg-slate-200 transition-colors">Solicitar Temario</a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-gradient-to-br from-rose-950 via-slate-900 to-slate-900 text-white p-6 sm:p-8 rounded-2xl space-y-4">
+                        <h4 class="font-bold text-lg text-rose-300 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap"></i> Niveles disponibles en Francés:
+                        </h4>
+                        <ul class="space-y-3 text-xs sm:text-sm">
+                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
+                                <span><strong class="text-rose-400">A1 - A2:</strong> Débutant & Élémentaire</span>
+                                <span class="bg-rose-900/80 px-2 py-0.5 rounded text-[11px] text-rose-300">3 meses c/u</span>
+                            </li>
+                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
+                                <span><strong class="text-purple-400">B1 - B2:</strong> Indépendant & Avancé</span>
+                                <span class="bg-purple-900/80 px-2 py-0.5 rounded text-[11px] text-purple-300">3 meses c/u</span>
+                            </li>
+                            <li class="flex items-center justify-between pb-2">
+                                <span><strong class="text-amber-400">C1 - C2:</strong> Autonome & Maîtrise</span>
+                                <span class="bg-amber-900/80 px-2 py-0.5 rounded text-[11px] text-amber-300">3 meses c/u</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Schedules Section -->
+    <section id="horarios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Flexibilidad Total</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Modalidades de Estudio Vía Google Meet</h2>
+                <p class="text-slate-600 mt-3">Adaptamos nuestras clases a tu agenda diaria o laboral para que nunca pierdas el ritmo de aprendizaje.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Weekday Option Card -->
+                <div class="bg-gradient-to-b from-slate-50 to-blue-50/30 rounded-3xl p-8 border-2 border-blue-200 hover:border-blue-500 transition-all shadow-md relative flex flex-col justify-between">
+                    <div class="absolute -top-3.5 right-6 bg-blue-600 text-white text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-sm">
+                        Popular para estudiantes
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-calendar-week"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">Modalidad Entre Semana</h3>
+                                <p class="text-xs font-semibold text-blue-600">3 Sesiones Semanales</p>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Ideal para mantener una práctica constante y fluida en dosis cortas y altamente enfocadas durante la semana.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="p-4 bg-white rounded-2xl border border-slate-200/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-regular fa-clock text-blue-600 text-lg"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800">Duración por clase</p>
+                                        <p class="text-xs text-slate-500">40 Minutos intensivos por sesión</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2.5 py-1 rounded-lg">3x semana</span>
+                            </div>
+
+                            <div class="p-4 bg-white rounded-2xl border border-slate-200/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-hourglass-start text-blue-600 text-lg"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800">Duración por Nivel</p>
+                                        <p class="text-xs text-slate-500">3 Meses completos</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">1 Trimestre</span>
+                            </div>
+
+                            <div class="space-y-2 pt-2">
+                                <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Horarios de clase disponibles:</p>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Mañana: 07:00 - 07:40 AM</div>
+                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Tarde: 06:00 - 06:40 PM</div>
+                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Noche: 07:00 - 07:40 PM</div>
+                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Noche: 08:00 - 08:40 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#registro" onclick="preselectSchedule('Entre Semana')" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl text-center shadow-md transition-all">
+                        Elegir Modalidad Entre Semana
+                    </a>
+                </div>
+
+                <!-- Saturday Option Card -->
+                <div class="bg-gradient-to-b from-slate-50 to-amber-50/30 rounded-3xl p-8 border-2 border-amber-200 hover:border-amber-500 transition-all shadow-md relative flex flex-col justify-between">
+                    <div class="absolute -top-3.5 right-6 bg-amber-500 text-slate-900 text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-sm">
+                        Ideal para trabajadores
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900">Modalidad Sabatina</h3>
+                                <p class="text-xs font-semibold text-amber-600">1 Sesión Intensiva Semanal</p>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Aprovecha el fin de semana para concentrar todo tu aprendizaje en un bloque práctico continuo sin interrupciones.
+                        </p>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="p-4 bg-white rounded-2xl border border-slate-200/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-regular fa-clock text-amber-600 text-lg"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800">Duración por sesión</p>
+                                        <p class="text-xs text-slate-500">2 Horas continuas de inmersión</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">Cada Sábado</span>
+                            </div>
+
+                            <div class="p-4 bg-white rounded-2xl border border-slate-200/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-hourglass-start text-amber-600 text-lg"></i>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800">Duración por Nivel</p>
+                                        <p class="text-xs text-slate-500">3 Meses completos</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-lg">1 Trimestre</span>
+                            </div>
+
+                            <div class="space-y-2 pt-2">
+                                <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Horarios sabatinos disponibles:</p>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Sabatino Matutino: 09:00 - 11:00 AM</div>
+                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Sabatino Mediodía: 11:30 AM - 01:30 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#registro" onclick="preselectSchedule('Sabatino')" class="w-full py-3.5 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-sm rounded-xl text-center shadow-md transition-all">
+                        Elegir Modalidad Sabatina
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Levels CEFR Framework Section (A1 to C2) -->
+    <section id="niveles" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-widest bg-blue-950 px-3 py-1 rounded-full border border-blue-800">Marco Común Europeo (MCER / CECRL)</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">Tu mapa de ruta del A1 al C2</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">
+                    Cada nivel oficial tiene una duración exacta de <strong>3 meses</strong>. Puedes ingresar directamente al nivel que te corresponda tras tu examen de ubicación.
+                </p>
+            </div>
+
+            <!-- Level Cards Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- A1 -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-blue-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl font-black text-blue-400">A1</span>
+                            <span class="text-[11px] font-bold bg-blue-900/60 text-blue-300 px-2.5 py-1 rounded-md">Principiante</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">Acceso e Iniciación</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Comprenderás frases cotidianas, saludos, presentaciones personales y vocabulario básico para desenvolverte en situaciones muy sencillas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+                        <span><i class="fa-regular fa-calendar text-blue-400"></i> Duración: 3 Meses</span>
+                        <span class="font-semibold text-emerald-400">Sin requisitos</span>
+                    </div>
+                </div>
+
+                <!-- A2 -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-blue-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl font-black text-blue-400">A2</span>
+                            <span class="text-[11px] font-bold bg-blue-900/60 text-blue-300 px-2.5 py-1 rounded-md">Elemental</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">Plataforma Fundamental</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Expresarte sobre temas de interés personal, compras, hábitos diarios, trabajo y descripción de entornos cercanos con fluidez básica.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+                        <span><i class="fa-regular fa-calendar text-blue-400"></i> Duración: 3 Meses</span>
+                        <span class="font-semibold text-slate-400">Acreditar A1</span>
+                    </div>
+                </div>
+
+                <!-- B1 -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-teal-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl font-black text-teal-400">B1</span>
+                            <span class="text-[11px] font-bold bg-teal-900/60 text-teal-300 px-2.5 py-1 rounded-md">Intermedio</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">Autonomía Lingüística</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Capacidad para desenvolverse en viajes, describir experiencias, redactar textos sencillos estructurados y justificar opiniones.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+                        <span><i class="fa-regular fa-calendar text-teal-400"></i> Duración: 3 Meses</span>
+                        <span class="font-semibold text-slate-400">Acreditar A2</span>
+                    </div>
+                </div>
+
+                <!-- B2 -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-teal-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl font-black text-teal-400">B2</span>
+                            <span class="text-[11px] font-bold bg-teal-900/60 text-teal-300 px-2.5 py-1 rounded-md">Intermedio Alto</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">Fluidez Profesional</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Entendimiento de textos complejos y debates técnicos. Fluidez espontánea con hablantes nativos sin esfuerzo perceptible.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+                        <span><i class="fa-regular fa-calendar text-teal-400"></i> Duración: 3 Meses</span>
+                        <span class="font-semibold text-slate-400">Acreditar B1</span>
+                    </div>
+                </div>
+
+                <!-- C1 -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-amber-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl font-black text-amber-400">C1</span>
+                            <span class="text-[11px] font-bold bg-amber-900/60 text-amber-300 px-2.5 py-1 rounded-md">Avanzado</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">Dominio Operativo Eficaz</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Uso flexible y ágil del idioma en entornos académicos, profesionales y sociales de alta exigencia sin limitación de léxico.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+                        <span><i class="fa-regular fa-calendar text-amber-400"></i> Duración: 3 Meses</span>
+                        <span class="font-semibold text-slate-400">Acreditar B2</span>
+                    </div>
+                </div>
+
+                <!-- C2 -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-amber-500 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl font-black text-amber-400">C2</span>
+                            <span class="text-[11px] font-bold bg-amber-900/60 text-amber-300 px-2.5 py-1 rounded-md">Maestría Nativa</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">Dominio Completo y Nativo</h4>
+                        <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                            Nivel de perfeccionamiento total. Capacidad para reconstruir argumentos de diversas fuentes y matizar expresiones con precisión.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-300">
+                        <span><i class="fa-regular fa-calendar text-amber-400"></i> Duración: 3 Meses</span>
+                        <span class="font-semibold text-slate-400">Acreditar C1</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section id="precios" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-100/70 px-3 py-1 rounded-full">Inversión Transparente</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Precios Accesibles y Sin Costos Ocultos</h2>
+                <p class="text-slate-600 mt-3">Misma tarifa garantizada tanto para el horario Entre Semana (3x40min) como el Sabatino (2h intensivo).</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Plan Mensual -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-slate-900">Plan de Pago Mensual</h3>
+                            <p class="text-xs text-slate-500 mt-1">Flexibilidad mes a mes durante los 3 meses del nivel.</p>
+                        </div>
+
+                        <div class="my-6">
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-4xl font-black text-slate-900">$890</span>
+                                <span class="text-slate-500 font-medium text-sm">MXN / mes</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">Covers 1 month of live Google Meet classes</p>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-check text-blue-600"></i>
+                                <span>Acceso completo a clases por Google Meet</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-check text-blue-600"></i>
+                                <span>Materiales didácticos digitales incluidos</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-check text-blue-600"></i>
+                                <span>Evaluaciones semanales de progreso</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-check text-blue-600"></i>
+                                <span>Opción de cambiar entre horario entre semana o sabatino</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#registro" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl text-center transition-colors">
+                        Inscribirme Mensual
+                    </a>
+                </div>
+
+                <!-- Plan Trimestral Completo (Descuento) -->
+                <div class="bg-gradient-to-b from-blue-900 via-slate-900 to-slate-900 text-white rounded-3xl p-8 shadow-xl relative flex flex-col justify-between border-2 border-blue-500">
+                    <div class="absolute -top-3.5 right-6 bg-emerald-500 text-slate-950 text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
+                        Ahorra un 20%
+                    </div>
+
+                    <div>
+                        <div class="mb-4">
+                            <h3 class="text-xl font-bold text-white">Pago Completo de Nivel (3 Meses)</h3>
+                            <p class="text-xs text-blue-200 mt-1">Asegura tu lugar y ahorra pagando el trimestre completo.</p>
+                        </div>
+
+                        <div class="my-6">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl font-black text-white">$2,130</span>
+                                <span class="text-slate-400 line-through text-sm">$2,670 MXN</span>
+                            </div>
+                            <p class="text-xs text-emerald-400 font-semibold mt-1">Pago único por el nivel completo de 3 meses</p>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span><strong>Todo lo del plan mensual</strong> + beneficios VIP</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>Certificado digital de conclusión de nivel sin costo adicional</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>1 Tutoría personalizada 1 a 1 de 30 min al trimestre</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                                <span>Garantía de reposición de clases en video</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#registro" class="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-xl text-center shadow-lg shadow-blue-500/30 transition-all">
+                        Inscribirme con Descuento
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration & Lead Capture Form -->
+    <section id="registro" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Info Banner -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Inscripción Directa</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Reserva tu clase demo o solicita tu Examen de Ubicación
+                    </h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Completa el formulario para enviarte la liga directa de <strong>Google Meet</strong> y los detalles del grupo que mejor se adapte a tus horarios.
+                    </p>
+
+                    <div class="space-y-4 pt-2 text-sm text-slate-700">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900">Atención WhatsApp Inmediata</p>
+                                <p class="text-xs text-slate-500">Respuesta en menos de 10 minutos</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-900">Correo Electrónico Académico</p>
+                                <p class="text-xs text-slate-500">contacto@linguaflex.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-10 rounded-3xl border border-slate-200/80 shadow-lg">
+                    <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                        
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo *</label>
+                                <input type="text" required placeholder="Ej. María García" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Correo Electrónico *</label>
+                                <input type="email" required placeholder="tu@correo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">WhatsApp / Teléfono *</label>
+                                <input type="tel" required placeholder="+52 55 1234 5678" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Idioma de Interés *</label>
+                                <select id="courseSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all font-medium text-slate-700">
+                                    <option value="Inglés">🇬🇧 Inglés (A1 - C2)</option>
+                                    <option value="Francés">🇫🇷 Francés (A1 - C2)</option>
+                                    <option value="Ambos">🇬🇧 + 🇫🇷 Ambos Idiomas</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Modalidad de Horario *</label>
+                                <select id="scheduleSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all font-medium text-slate-700">
+                                    <option value="Entre Semana">Entre Semana (3 sesiones x 40 min)</option>
+                                    <option value="Sabatino">Sabatino Intensivo (1 sesión x 2 hrs)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nivel Aproximado</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all font-medium text-slate-700">
+                                    <option value="No lo sé">No lo sé (Requiero examen de ubicación)</option>
+                                    <option value="A1">A1 - Principiante cero</option>
+                                    <option value="A2">A2 - Básico / Elemental</option>
+                                    <option value="B1">B1 - Intermedio</option>
+                                    <option value="B2">B2 - Intermedio Alto</option>
+                                    <option value="C1-C2">C1 / C2 - Avanzado</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">¿Algún comentario o duda particular?</label>
+                            <textarea rows="3" placeholder="Indícanos si tienes preferencia de horario de la mañana o tarde..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-blue-500/25 transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Enviar Solicitud e Iniciar Clase Demo</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section Accordion -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-100/70 px-3 py-1 rounded-full">Resuelve tus Dudas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50">
+                        <span>¿Cómo funcionan las clases vía Google Meet?</span>
+                        <i id="faqIcon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqContent-1" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Al inscribirte recibes un enlace permanente de Google Meet para tu grupo. Conectas a la hora estipulada con tu docente y compañeros en vivo. No requieres instalar programas complicados, funciona en computadora, tablet o teléfono celular.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50">
+                        <span>¿Cuál es la diferencia entre el horario Entre Semana y el Sabatino?</span>
+                        <i id="faqIcon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqContent-2" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Ambas modalidades completan exactamente el mismo programa académico en <strong>3 meses por nivel</strong>. Entre semana tomas 3 sesiones ágiles de 40 minutos (ej. Lunes, Miércoles y Viernes). El sabatino concentra las 2 horas lectivas en una sola sesión semanal intensiva los días sábados.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50">
+                        <span>¿Qué pasa si pierdo una sesión en vivo?</span>
+                        <i id="faqIcon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqContent-3" class="hidden px-5 pb-5 text-sm text-slate-100 text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Todas las clases de Google Meet son grabadas y compartidas de forma privada en el grupo para que puedas repasarlas o ponerte al día si tuviste un imprevisto.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50">
+                        <span>¿Entregan certificado al terminar mi nivel?</span>
+                        <i id="faqIcon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faqContent-4" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                        Sí. Al culminar con éxito los 3 meses de cada nivel (A1, A2, B1, B2, C1, C2) y aprobar el examen final de módulo, se emite un certificado digital acreditando las horas de estudio alineadas con el MCER.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Placement Quiz Modal -->
+    <div id="quizModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 overflow-hidden">
+            <button onclick="closeQuizModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="quizStep1" class="space-y-5">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Examen de Diagnóstico Exprès</span>
+                <h3 class="text-2xl font-extrabold text-slate-900">¿Qué idioma deseas evaluar?</h3>
+                <p class="text-slate-600 text-sm">Responde 2 preguntas rápidas para orientarte en tu nivel recomendado.</p>
+                
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <button onclick="selectQuizLang('Inglés')" class="p-4 rounded-2xl border-2 border-slate-200 hover:border-blue-600 text-left transition-all hover:bg-blue-50/50">
+                        <span class="text-3xl">🇬🇧</span>
+                        <p class="font-bold text-slate-900 mt-2">Inglés</p>
+                    </button>
+                    <button onclick="selectQuizLang('Francés')" class="p-4 rounded-2xl border-2 border-slate-200 hover:border-rose-600 text-left transition-all hover:bg-rose-50/50">
+                        <span class="text-3xl">🇫🇷</span>
+                        <p class="font-bold text-slate-900 mt-2">Francés</p>
+                    </button>
+                </div>
+            </div>
+
+            <div id="quizStep2" class="space-y-5 hidden">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Pregunta 1 de 2</span>
+                <h3 class="text-xl font-extrabold text-slate-900" id="quizQuestionText">¿Cómo describirías tu conocimiento actual?</h3>
+                
+                <div class="space-y-2.5 pt-2 text-sm">
+                    <button onclick="answerQuiz(1)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-500 hover:bg-blue-50/50 transition-colors">
+                        A) Cero o muy poco. Nunca lo he estudiado formalmente.
+                    </button>
+                    <button onclick="answerQuiz(2)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-500 hover:bg-blue-50/50 transition-colors">
+                        B) Entiendo algunas palabras e instrucciones simples, pero me cuesta hablar.
+                    </button>
+                    <button onclick="answerQuiz(3)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-500 hover:bg-blue-50/50 transition-colors">
+                        C) Puedo mantener conversaciones básicas sobre mi vida y trabajo.
+                    </button>
+                    <button onclick="answerQuiz(4)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-500 hover:bg-blue-50/50 transition-colors">
+                        D) Me expreso con soltura pero quiero corregir fluidez y gramática avanzada.
+                    </button>
+                </div>
+            </div>
+
+            <div id="quizResult" class="space-y-5 hidden text-center py-4">
+                <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-slate-900">¡Diagnóstico Estimado Listo!</h3>
+                <p class="text-sm text-slate-600">
+                    Tu punto de partida ideal estimado es: <strong id="recommendedLevel" class="text-blue-600 font-bold text-lg">A2 (Elemental)</strong>
+                </p>
+                <p class="text-xs text-slate-500">
+                    Te sugerimos programar una breve prueba de nivel oral gratuita de 10 minutos con uno de nuestros coordinadores académicos.
+                </p>
+                
+                <div class="pt-2">
+                    <a href="#registro" onclick="closeQuizModal()" class="w-full block py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl text-center shadow-md">
+                        Agendar Prueba Oral Gratuita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Container -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 text-white p-4 rounded-2xl shadow-2xl border border-slate-700 max-w-sm flex items-start gap-3 transform transition-all duration-300">
+        <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shrink-0 font-bold mt-0.5">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h5 class="font-bold text-sm text-white" id="toastTitle">¡Solicitud Recibida!</h5>
+            <p class="text-xs text-slate-300 mt-0.5" id="toastMsg">Te contactaremos a la brevedad con la liga de tu clase demo en Google Meet.</p>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp CTA Button -->
+    <a href="https://wa.me/?text=Hola%2C%20quiero%20informes%20sobre%20los%20cursos%20de%20Ingl%C3%A9s%20y%20Franc%C3%A9s%20en%20l%C3%ADnea." target="_blank" class="fixed bottom-6 left-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition-all border-2 border-white">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-white font-extrabold text-xl">
+                        <i class="fa-solid fa-language text-blue-500"></i> Lingua<span class="text-blue-500">Flex</span>
+                    </div>
+                    <p class="leading-relaxed">
+                        Centro de capacitación de idiomas en línea especializado en Inglés y Francés por niveles (A1-C2) vía Google Meet.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Programas</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#idiomas" class="hover:text-white">Inglés General y Negocios</a></li>
+                        <li><a href="#idiomas" class="hover:text-white">Francés Comunicativo</a></li>
+                        <li><a href="#niveles" class="hover:text-white">Niveles MCER / CECRL (A1-C2)</a></li>
+                        <li><a href="#horarios" class="hover:text-white">Modalidad Entre Semana</a></li>
+                        <li><a href="#horarios" class="hover:text-white">Modalidad Sabatina</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Metodología</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#metodologia" class="hover:text-white">Clases en vivo Google Meet</a></li>
+                        <li><a href="#metodologia" class="hover:text-white">Grupos reducidos</a></li>
+                        <li><a href="#precios" class="hover:text-white">Planes de inversión</a></li>
+                        <li><a href="#faq" class="hover:text-white">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Contacto</h5>
+                    <p class="mb-2"><i class="fa-solid fa-envelope text-blue-400 mr-1.5"></i> contacto@linguaflex.com</p>
+                    <p><i class="fa-brands fa-whatsapp text-emerald-400 mr-1.5"></i> +52 55 1234 5678</p>
+                    <p class="mt-3 text-[11px] text-slate-500">Atención a clientes: Lunes a Sábado 8:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+                <p>© 2026 Linguaflex Academy. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-white">Aviso de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Language Tab Switcher
+        function switchLanguageTab(lang) {
+            const engContent = document.getElementById('englishTabContent');
+            const freContent = document.getElementById('frenchTabContent');
+            const engBtn = document.getElementById('tabEnglishBtn');
+            const freBtn = document.getElementById('tabFrenchBtn');
+
+            if (lang === 'english') {
+                engContent.classList.remove('hidden');
+                freContent.classList.add('hidden');
+                engBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 bg-blue-600 text-white shadow-md";
+                freBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
+            } else {
+                freContent.classList.remove('hidden');
+                engContent.classList.add('hidden');
+                freBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 bg-rose-600 text-white shadow-md";
+                engBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
+            }
+        }
+
+        // FAQ Toggle Accordion
+        function toggleFaq(id) {
+            const content = document.getElementById(`faqContent-${id}`);
+            const icon = document.getElementById(`faqIcon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Pre-select Schedule in Form
+        function preselectSchedule(scheduleName) {
+            const scheduleSelect = document.getElementById('scheduleSelect');
+            if (scheduleSelect) {
+                scheduleSelect.value = scheduleName;
+            }
+        }
+
+        // Quiz Modal Logic
+        let selectedQuizLang = 'Inglés';
+
+        function openQuizModal() {
+            document.getElementById('quizModal').classList.remove('hidden');
+            document.getElementById('quizStep1').classList.remove('hidden');
+            document.getElementById('quizStep2').classList.add('hidden');
+            document.getElementById('quizResult').classList.add('hidden');
+        }
+
+        function closeQuizModal() {
+            document.getElementById('quizModal').classList.add('hidden');
+        }
+
+        function selectQuizLang(lang) {
+            selectedQuizLang = lang;
+            document.getElementById('quizStep1').classList.add('hidden');
+            document.getElementById('quizStep2').classList.remove('hidden');
+            document.getElementById('quizQuestionText').innerText = `¿Cómo evaluarías tu nivel en ${lang}?`;
+        }
+
+        function answerQuiz(option) {
+            document.getElementById('quizStep2').classList.add('hidden');
+            document.getElementById('quizResult').classList.remove('hidden');
+
+            const resultText = document.getElementById('recommendedLevel');
+            if (option === 1) resultText.innerText = `Nivel A1 (Principiante Cero) en ${selectedQuizLang}`;
+            else if (option === 2) resultText.innerText = `Nivel A2 (Elemental) en ${selectedQuizLang}`;
+            else if (option === 3) resultText.innerText = `Nivel B1 - B2 (Intermedio) en ${selectedQuizLang}`;
+            else resultText.innerText = `Nivel C1 (Avanzado) en ${selectedQuizLang}`;
+        }
+
+        // Lead Form Handler & Custom Toast
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const toast = document.getElementById('toastNotification');
+            toast.classList.remove('hidden');
+            
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 6000);
+
+            document.getElementById('leadForm').reset();
+        }
+    </script>
+</body>
+</html>

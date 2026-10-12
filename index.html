@@ -100,9 +100,6 @@
 
             <!-- Actions & Contact CTA -->
             <div class="hidden lg:flex items-center gap-3">
-                <button onclick="openQuizModal()" class="text-xs font-bold px-3.5 py-2.5 text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors flex items-center gap-1.5 border border-slate-200">
-                    <i class="fa-solid fa-clipboard-question text-[#2B4C8C]"></i> Test de Ubicación
-                </button>
                 <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold text-sm shadow-md shadow-green-600/20 hover:shadow-lg transition-all flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-base"></i>
                     <span>Escríbenos</span>
@@ -122,9 +119,6 @@
             <a href="#idiomas" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Cursos de Inglés y Francés</a>
             <a href="#precios" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Costos y Promociones</a>
             <a href="#coordinacion" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Coordinación Académica</a>
-            <button onclick="openQuizModal()" class="py-2 text-left font-bold text-[#2B4C8C] flex items-center gap-2">
-                <i class="fa-solid fa-clipboard-question"></i> Examen de ubicación rápido
-            </button>
             <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="mt-2 w-full text-center py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold shadow-md flex items-center justify-center gap-2">
                 <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
             </a>
@@ -934,56 +928,6 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Quick Placement Quiz Modal -->
-    <div id="quizModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 relative">
-            <button onclick="closeQuizModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-blue-100 text-[#2B4C8C] rounded-xl flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-clipboard-question"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-base">Test de Ubicación Rápido</h3>
-                    <p class="text-xs text-slate-500">BEhelp Assessors</p>
-                </div>
-            </div>
-            
-            <p class="text-xs text-slate-600">Responde estas 2 preguntas para sugerirte tu nivel ideal:</p>
-
-            <div class="space-y-3 text-xs">
-                <div>
-                    <label class="font-bold text-slate-800 block mb-1">1. ¿Has estudiado antes el idioma?</label>
-                    <select id="quizPrev" class="w-full p-2.5 rounded-lg border border-slate-300">
-                        <option value="no">No, empiezo desde cero</option>
-                        <option value="basic">Sí, conozco cosas muy básicas</option>
-                        <option value="intermediate">Sí, entiendo la mayor parte de textos simples</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="font-bold text-slate-800 block mb-1">2. ¿Cuál es tu objetivo principal?</label>
-                    <select id="quizGoal" class="w-full p-2.5 rounded-lg border border-slate-300">
-                        <option value="travel">Viajes o pasatiempo</option>
-                        <option value="work">Mejora laboral / Certificación</option>
-                        <option value="school">Escolar / Académico</option>
-                    </select>
-                </div>
-            </div>
-
-            <button onclick="calcQuizResult()" class="w-full py-3 bg-[#2B4C8C] text-white font-bold text-xs rounded-xl hover:bg-blue-800 transition-colors">
-                Ver Recomendación
-            </button>
-
-            <div id="quizResult" class="hidden p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs space-y-2">
-                <p id="quizText" class="font-bold text-[#2B4C8C]"></p>
-                <a id="quizWaLink" href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="block text-center py-2 bg-green-600 text-white rounded-lg font-bold text-xs">
-                    Contactar para Examen Completo vía WhatsApp
-                </a>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Mobile Drawer Toggle
         const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -993,32 +937,6 @@
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('flex');
         });
-
-        // Quiz Modal Logic
-        function openQuizModal() {
-            document.getElementById('quizModal').classList.remove('hidden');
-        }
-
-        function closeQuizModal() {
-            document.getElementById('quizModal').classList.add('hidden');
-            document.getElementById('quizResult').classList.add('hidden');
-        }
-
-        function calcQuizResult() {
-            const prev = document.getElementById('quizPrev').value;
-            const textEl = document.getElementById('quizText');
-            const resEl = document.getElementById('quizResult');
-
-            if (prev === 'no') {
-                textEl.textContent = 'Te recomendamos iniciar en el Nivel A1.1 (Principiante desde Cero).';
-            } else if (prev === 'basic') {
-                textEl.textContent = 'Te recomendamos el Nivel A2.1 o solicitar examen diagnóstico gratuito.';
-            } else {
-                textEl.textContent = 'Te recomendamos realizar nuestro examen institucional de ubicación para nivel B1 o B2.';
-            }
-
-            resEl.classList.remove('hidden');
-        }
 
         // Form Submission Redirect to WhatsApp
         function handleFormSubmit(e) {

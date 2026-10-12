@@ -203,22 +203,12 @@
                         
                         <!-- Bernie Mascot Mascot Welcome Banner -->
                         <div class="flex items-center gap-3 bg-white p-3 rounded-2xl border border-blue-200 shadow-md mb-4 animate-bounce">
-                            <!-- SVG Mascot Mascot Representation -->
-                            <div class="w-16 h-16 shrink-0 relative">
-                                <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
-                                    <ellipse cx="50" cy="70" rx="35" ry="30" fill="#2B4C8C" />
-                                    <ellipse cx="50" cy="72" rx="25" ry="20" fill="#A7D6E2" />
-                                    <circle cx="50" cy="38" r="24" fill="#2B4C8C" />
-                                    <path d="M25 32 Q50 10 75 32 Q50 22 25 32 Z" fill="#E53845" />
-                                    <circle cx="50" cy="18" r="4" fill="#E53845" />
-                                    <ellipse cx="42" cy="36" rx="5" ry="8" fill="white" />
-                                    <ellipse cx="58" cy="36" rx="5" ry="8" fill="white" />
-                                    <circle cx="43" cy="37" r="3" fill="black" />
-                                    <circle cx="57" cy="37" r="3" fill="black" />
-                                    <path d="M43 46 Q50 50 57 46" stroke="black" stroke-width="1.5" fill="none" />
-                                    <circle cx="60" cy="62" r="5" fill="#E53845" />
-                                    <text x="60" y="64" font-size="6" font-weight="bold" fill="white" text-anchor="middle">B</text>
-                                </svg>
+                            <!-- Original Bernie Image cropped chest-up cleanly -->
+                            <div class="w-16 h-16 shrink-0 relative overflow-hidden rounded-full bg-white border-2 border-[#2B4C8C]/20 flex items-center justify-center">
+                                <img src="Bernie saludando en la frente.jfif" 
+                                     alt="Bernie la Tortuga Mascota" 
+                                     class="w-full h-full object-cover object-[center_15%]"
+                                     onerror="this.src='https://placehold.co/100x100/2B4C8C/FFFFFF?text=Bernie'">
                             </div>
                             <div class="text-xs">
                                 <p class="font-extrabold text-[#2B4C8C]">¡Hola, soy Bernie! 🐢</p>
@@ -262,7 +252,7 @@
                                     <div class="flex items-center gap-3">
                                         <span class="text-xl">🇫🇷</span>
                                         <div>
-                                            <p class="text-xs font-bold text-slate-900">Francés General (12+ años)</p>
+                                            <p class="text-xs font-bold text-slate-900">Francés (12+ años)</p>
                                             <p class="text-[11px] text-slate-500">Estructurado de A1 a C2</p>
                                         </div>
                                     </div>
@@ -278,7 +268,7 @@
                                 <div class="grid grid-cols-2 gap-2 text-[11px]">
                                     <div class="bg-white/10 p-2 rounded-lg">
                                         <p class="font-bold">Entre semana:</p>
-                                        <p class="text-slate-300">3 sesiones x 40 min</p>
+                                        <p class="text-slate-300">3 sesiones x 40 min<br>o 2 sesiones de 1 hora</p>
                                     </div>
                                     <div class="bg-white/10 p-2 rounded-lg">
                                         <p class="font-bold">Sabatino:</p>
@@ -407,7 +397,7 @@
                     </div>
                     <h3 class="font-bold text-slate-900 text-lg mb-2">Clases Grabadas</h3>
                     <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                        Vía Google Meet. Si no logras conectarte en vivo, puedes repasar las sesiones.
+                        Si no logras conectarte en vivo, puedes solicitar la grabación para repasar las sesiones.
                     </p>
                 </div>
             </div>
@@ -467,7 +457,7 @@
                             <span class="text-3xl">🇫🇷</span>
                             <span class="bg-[#E53845] text-white text-xs font-bold px-3 py-1 rounded-full">12+ Años</span>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Curso de Francés General</h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Curso de Francés</h3>
                         <p class="text-xs text-[#E53845] font-bold mb-3">Desde Nivel A1 hasta C2</p>
                         <p class="text-slate-600 text-sm mb-6 leading-relaxed">
                             Aprende la lengua francesa con estructura sólida. Ideal para desarrollo académico, viajes y oportunidades laborales.
@@ -759,6 +749,57 @@
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
                 </div>
+
+                <!-- Review 4 -->
+                <div class="p-6 bg-[#F5FAF9] rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#E53845] text-white font-bold flex items-center justify-center">CL</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Cynthia López</h4>
+                            <p class="text-[11px] text-slate-500">Estudiante BEhelp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        "Mi experiencia en BEhelp Assessors ha sido excelente. El método de enseñanza es muy estructurado, interactivo y enfocado en la práctica real del idioma. Los docentes son profesionales altamente capacitados."
+                    </p>
+                    <div class="text-amber-400 text-xs flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="p-6 bg-[#F5FAF9] rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#2B4C8C] text-white font-bold flex items-center justify-center">RG</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Rodrigo Gómez</h4>
+                            <p class="text-[11px] text-slate-500">Estudiante BEhelp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        "Los grupos reducidos hacen una enorme diferencia. La atención personalizada y las clases síncronas me han permitido perder el miedo a hablar y avanzar rápidamente en mi nivel de inglés."
+                    </p>
+                    <div class="text-amber-400 text-xs flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="p-6 bg-[#F5FAF9] rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#E53845] text-white font-bold flex items-center justify-center">VP</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Valeria Pérez</h4>
+                            <p class="text-[11px] text-slate-500">Estudiante BEhelp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        "Poder revisar las grabaciones de las clases cuando no puedo conectarme en vivo es una gran ventaja. Además, contar con constancia con valor curricular da muchísima tranquilidad y respaldo profesional."
+                    </p>
+                    <div class="text-amber-400 text-xs flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -823,12 +864,11 @@
             <div class="grid md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
                 
                 <div>
-                    <div class="flex flex-col mb-4">
-                        <div class="flex items-baseline font-black text-2xl tracking-tight leading-none text-white">
-                            <span class="text-[#E53845]">BE</span>
-                            <span>help</span>
+                    <div class="flex flex-col mb-4 items-start">
+                        <!-- Original Logo in Footer -->
+                        <div class="w-36 bg-white/10 p-2 rounded-xl backdrop-blur-sm border border-white/20 mb-1 flex items-center justify-center">
+                            <img src="Logo EvolSocial (1)_2.png" alt="BEhelp Assessors Logo" class="w-full h-auto object-contain" onerror="this.src='https://placehold.co/150x60/2B4C8C/FFFFFF?text=BEhelp'">
                         </div>
-                        <span class="text-[9px] font-bold tracking-[0.25em] text-slate-400 uppercase mt-0.5">ASSESSORS</span>
                         <span class="text-[9px] text-[#A7D6E2] font-semibold mt-0.5">¡Tus asesores en un click!</span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">

@@ -31,14 +31,11 @@
                     },
                     colors: {
                         brand: {
-                            navy: '#0f172a',
-                            deep: '#1e293b',
-                            blue: '#1d4ed8',
-                            blueHover: '#1e40af',
-                            red: '#dc2626',
-                            redHover: '#b91c1c',
-                            lightBlue: '#eff6ff',
-                            lightRed: '#fef2f2',
+                            red: '#E53845',       /* Exact brand red from "BE" logo & Bernie beret */
+                            blue: '#2B4C8C',      /* Exact brand blue from "help" logo & Bernie body */
+                            blueDark: '#1E3663',
+                            lightBlue: '#A7D6E2',  /* Soft light blue from Bernie chest */
+                            bgLight: '#F5FAF9',    /* Off-white background from brand assets */
                             accent: '#2563eb'
                         }
                     }
@@ -48,60 +45,67 @@
     </script>
     <style>
         .gradient-text {
-            background: linear-gradient(135deg, #1d4ed8 0%, #dc2626 100%);
+            background: linear-gradient(135deg, #2B4C8C 0%, #E53845 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero-bg {
-            background: radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.12) 0%, transparent 45%),
-                        radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.12) 0%, transparent 45%);
+            background: radial-gradient(circle at 80% 20%, rgba(43, 76, 140, 0.12) 0%, transparent 45%),
+                        radial-gradient(circle at 20% 80%, rgba(229, 56, 69, 0.12) 0%, transparent 45%);
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.90);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.9);
+            border: 1px solid rgba(167, 214, 226, 0.4);
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-blue-600 selection:text-white">
+<body class="font-sans text-slate-800 bg-[#F5FAF9] antialiased selection:bg-[#2B4C8C] selection:text-white">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-blue-900 via-slate-900 to-red-900 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
-        <span class="bg-red-600 text-white text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider">Inscripciones Abiertas</span>
-        <span>¡Inicia tu nivel en 3 meses vía Google Meet con BEhelp Assessors! Obtén 15% de descuento en tu primer módulo.</span>
+    <div class="bg-gradient-to-r from-[#1E3663] via-[#2B4C8C] to-[#E53845] text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-2">
+        <span class="bg-[#E53845] text-white text-xs px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider shadow-sm">Inscripciones Abiertas</span>
+        <span>¡Inscripción por solo <strong>$400 MXN</strong> (Antes $800)! Constancia con valor curricular Red SEP-CONOCER.</span>
+        <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="underline font-bold hover:text-red-200 ml-1 inline-flex items-center gap-1">
+            <i class="fa-brands fa-whatsapp"></i> Contactar por WhatsApp
+        </a>
     </div>
 
     <!-- Main Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-700 to-red-600 flex items-center justify-center text-white font-black text-xl shadow-md group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-language"></i>
-                </div>
+            <!-- Official Brand Logo -->
+            <a href="#" class="flex items-center gap-2 group">
                 <div class="flex flex-col">
-                    <span class="font-black text-2xl tracking-tight text-slate-900 leading-none">BEhelp <span class="text-red-600">Assessors</span></span>
-                    <span class="text-[10px] font-bold tracking-widest text-blue-700 uppercase">Centro de Idiomas En Línea</span>
+                    <div class="flex items-baseline font-black text-3xl sm:text-4xl tracking-tight leading-none">
+                        <span class="text-[#E53845] relative inline-block">BE</span>
+                        <span class="text-[#2B4C8C]">help</span>
+                    </div>
+                    <div class="flex items-center gap-1 mt-1 border-t border-slate-800/80 pt-0.5">
+                        <span class="text-[10px] font-bold tracking-[0.25em] text-slate-900 uppercase">ASSESSORS</span>
+                    </div>
+                    <span class="text-[9px] font-bold tracking-wider text-[#2B4C8C] uppercase mt-0.5">¡Tus asesores en un click! <i class="fa-solid fa-arrow-pointer text-[8px]"></i></span>
                 </div>
             </a>
 
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center gap-8 font-semibold text-slate-600 text-sm">
-                <a href="#metodologia" class="hover:text-blue-700 transition-colors">Metodología</a>
-                <a href="#idiomas" class="hover:text-blue-700 transition-colors">Inglés & Francés</a>
-                <a href="#horarios" class="hover:text-blue-700 transition-colors">Horarios</a>
-                <a href="#niveles" class="hover:text-blue-700 transition-colors">Niveles (A1-C2)</a>
-                <a href="#precios" class="hover:text-blue-700 transition-colors">Inversión</a>
-                <a href="#faq" class="hover:text-blue-700 transition-colors">Preguntas</a>
+                <a href="#nosotros" class="hover:text-[#2B4C8C] transition-colors">Nosotros</a>
+                <a href="#metodologia" class="hover:text-[#2B4C8C] transition-colors">Beneficios</a>
+                <a href="#idiomas" class="hover:text-[#2B4C8C] transition-colors">Cursos</a>
+                <a href="#precios" class="hover:text-[#2B4C8C] transition-colors">Costos</a>
+                <a href="#coordinacion" class="hover:text-[#2B4C8C] transition-colors">Coordinación</a>
+                <a href="#testimonios" class="hover:text-[#2B4C8C] transition-colors">Testimonios</a>
             </nav>
 
             <!-- Actions & Contact CTA -->
-            <div class="hidden lg:flex items-center gap-4">
-                <button onclick="openQuizModal()" class="text-xs font-bold px-3.5 py-2 text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 border border-slate-200">
-                    <i class="fa-solid fa-clipboard-question text-blue-700"></i> Examen de Ubicación
+            <div class="hidden lg:flex items-center gap-3">
+                <button onclick="openQuizModal()" class="text-xs font-bold px-3.5 py-2.5 text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors flex items-center gap-1.5 border border-slate-200">
+                    <i class="fa-solid fa-clipboard-question text-[#2B4C8C]"></i> Test de Ubicación
                 </button>
-                <a href="#registro" class="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold text-sm shadow-md shadow-red-500/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                    Clase Demo Gratis
+                <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold text-sm shadow-md shadow-green-600/20 hover:shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Escríbenos</span>
                 </a>
             </div>
 
@@ -113,173 +117,179 @@
 
         <!-- Mobile Drawer Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 flex-col gap-4 text-sm font-semibold">
-            <a href="#metodologia" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-700">Metodología</a>
-            <a href="#idiomas" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-700">Cursos de Inglés y Francés</a>
-            <a href="#horarios" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-700">Horarios (Entre Semana / Sabatino)</a>
-            <a href="#niveles" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-700">Niveles A1 a C2</a>
-            <a href="#precios" class="py-2 border-b border-slate-100 text-slate-700 hover:text-blue-700">Planes de Inversión</a>
-            <button onclick="openQuizModal()" class="py-2 text-left font-bold text-blue-700 flex items-center gap-2">
+            <a href="#nosotros" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Nosotros</a>
+            <a href="#metodologia" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Beneficios</a>
+            <a href="#idiomas" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Cursos de Inglés y Francés</a>
+            <a href="#precios" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Costos y Promociones</a>
+            <a href="#coordinacion" class="py-2 border-b border-slate-100 text-slate-700 hover:text-[#2B4C8C]">Coordinación Académica</a>
+            <button onclick="openQuizModal()" class="py-2 text-left font-bold text-[#2B4C8C] flex items-center gap-2">
                 <i class="fa-solid fa-clipboard-question"></i> Examen de ubicación rápido
             </button>
-            <a href="#registro" class="mt-2 w-full text-center py-3 bg-red-600 text-white rounded-xl font-bold shadow-md">
-                Reservar Clase Gratis
+            <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="mt-2 w-full text-center py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-bold shadow-md flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Contactar por WhatsApp
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden hero-bg pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <section class="relative overflow-hidden hero-bg pt-10 pb-20 lg:pt-16 lg:pb-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
                 <!-- Hero Left Column -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-800 text-xs sm:text-sm font-bold">
-                        <span class="flex h-2.5 w-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#2B4C8C] text-xs sm:text-sm font-bold">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-[#E53845] animate-pulse"></span>
                         BEhelp Assessors • Clases 100% En Vivo vía Google Meet
                     </div>
 
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
-                        Aprende <span class="gradient-text">Inglés y Francés</span> con expertos en enseñanza en línea
+                        Centro de Capacitación de <span class="gradient-text">Inglés y Francés</span> en Línea
                     </h1>
 
                     <p class="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                        Domina el idioma desde el nivel <strong class="text-slate-900 font-bold">A1 hasta el C2</strong>. Completa 1 nivel en solo <strong class="text-slate-900 font-bold">3 meses</strong> con docentes certificados y grupos interactivos.
+                        Domina el idioma desde el nivel <strong class="text-slate-900 font-bold">A1 hasta el C2</strong>. Cursos estructurados de <strong class="text-slate-900 font-bold">3 meses por nivel</strong> con constancia con valor curricular Red SEP-CONOCER y grupos reducidos (máx. 8 alumnos).
                     </p>
 
                     <!-- Feature Badges -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-lg mx-auto lg:mx-0 text-left">
                         <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-200 flex items-center gap-2.5">
-                            <i class="fa-solid fa-calendar-check text-blue-700 text-lg"></i>
+                            <i class="fa-solid fa-certificate text-[#2B4C8C] text-lg"></i>
                             <div class="text-xs">
-                                <p class="font-bold text-slate-900">3 Meses</p>
-                                <p class="text-slate-500">Duración por nivel</p>
+                                <p class="font-bold text-slate-900">Valor Curricular</p>
+                                <p class="text-slate-500">Red SEP - CONOCER</p>
                             </div>
                         </div>
                         <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-200 flex items-center gap-2.5">
-                            <i class="fa-solid fa-clock text-red-600 text-lg"></i>
+                            <i class="fa-solid fa-users text-[#E53845] text-lg"></i>
                             <div class="text-xs">
-                                <p class="font-bold text-slate-900">Flexibilidad</p>
-                                <p class="text-slate-500">Entre semana o sábado</p>
+                                <p class="font-bold text-slate-900">Grupos Pequeños</p>
+                                <p class="text-slate-500">Máximo 8 alumnos</p>
                             </div>
                         </div>
                         <div class="p-3 bg-white rounded-xl shadow-sm border border-slate-200 flex items-center gap-2.5 col-span-2 sm:col-span-1">
-                            <i class="fa-solid fa-video text-blue-700 text-lg"></i>
+                            <i class="fa-solid fa-video text-[#2B4C8C] text-lg"></i>
                             <div class="text-xs">
                                 <p class="font-bold text-slate-900">Google Meet</p>
-                                <p class="text-slate-500">Clases 100% en vivo</p>
+                                <p class="text-slate-500">Clases grabadas</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Hero Call to Action Buttons -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#registro" class="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-red-600/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
-                            <span>Agendar Clase Demo Gratis</span>
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-green-600/25 hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2.5">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Inscribirme vía WhatsApp</span>
                         </a>
-                        <button onclick="openQuizModal()" class="w-full sm:w-auto px-7 py-4 bg-white hover:bg-slate-100 text-slate-900 border-2 border-blue-700 font-extrabold text-base rounded-2xl transition-all text-center flex items-center justify-center gap-2 shadow-sm">
-                            <i class="fa-solid fa-vial text-blue-700"></i>
-                            <span>Examen de Nivel Gratis</span>
-                        </button>
+                        <a href="#registro" class="w-full sm:w-auto px-7 py-4 bg-white hover:bg-slate-100 text-slate-900 border-2 border-slate-300 font-extrabold text-base rounded-2xl transition-all text-center flex items-center justify-center gap-2 shadow-sm">
+                            <i class="fa-solid fa-pen-to-square text-[#2B4C8C]"></i>
+                            <span>Formulario de Solicitud</span>
+                        </a>
                     </div>
 
-                    <!-- Social Proof Ticker -->
+                    <!-- Trust indicators -->
                     <div class="pt-6 border-t border-slate-200/80 flex items-center justify-center lg:justify-start gap-6 text-slate-600 text-xs sm:text-sm">
-                        <div class="flex -space-x-2">
-                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Estudiante BEhelp">
-                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Estudiante BEhelp">
-                            <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Estudiante BEhelp">
-                        </div>
-                        <div>
-                            <div class="flex text-red-600 text-xs">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="font-semibold text-slate-800">BEhelp Assessors • Más de 1,500 alumnos graduados</p>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-award text-amber-500 text-xl"></i>
+                            <span class="font-semibold text-slate-800">Coordinación académica con +28 años de experiencia</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hero Right Interactive Card Showcase -->
+                <!-- Hero Right Card Showcase with Bernie the Mascot -->
                 <div class="lg:col-span-5">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Decorative Glow -->
-                        <div class="absolute -top-6 -right-6 w-72 h-72 bg-blue-500/15 rounded-full blur-3xl"></div>
-                        <div class="absolute -bottom-6 -left-6 w-72 h-72 bg-red-500/15 rounded-full blur-3xl"></div>
+                        
+                        <!-- Bernie Mascot Mascot Welcome Banner -->
+                        <div class="flex items-center gap-3 bg-white p-3 rounded-2xl border border-blue-200 shadow-md mb-4 animate-bounce">
+                            <!-- SVG Mascot Mascot Representation -->
+                            <div class="w-16 h-16 shrink-0 relative">
+                                <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow">
+                                    <ellipse cx="50" cy="70" rx="35" ry="30" fill="#2B4C8C" />
+                                    <ellipse cx="50" cy="72" rx="25" ry="20" fill="#A7D6E2" />
+                                    <circle cx="50" cy="38" r="24" fill="#2B4C8C" />
+                                    <path d="M25 32 Q50 10 75 32 Q50 22 25 32 Z" fill="#E53845" />
+                                    <circle cx="50" cy="18" r="4" fill="#E53845" />
+                                    <ellipse cx="42" cy="36" rx="5" ry="8" fill="white" />
+                                    <ellipse cx="58" cy="36" rx="5" ry="8" fill="white" />
+                                    <circle cx="43" cy="37" r="3" fill="black" />
+                                    <circle cx="57" cy="37" r="3" fill="black" />
+                                    <path d="M43 46 Q50 50 57 46" stroke="black" stroke-width="1.5" fill="none" />
+                                    <circle cx="60" cy="62" r="5" fill="#E53845" />
+                                    <text x="60" y="64" font-size="6" font-weight="bold" fill="white" text-anchor="middle">B</text>
+                                </svg>
+                            </div>
+                            <div class="text-xs">
+                                <p class="font-extrabold text-[#2B4C8C]">¡Hola, soy Bernie! 🐢</p>
+                                <p class="text-slate-600">¡Tu acompañante de idiomas en BEhelp Assessors!</p>
+                            </div>
+                        </div>
 
-                        <!-- Main Interactive Platform Preview Card -->
+                        <!-- Main Preview Card -->
                         <div class="relative glass-card rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6">
                             
-                            <!-- Virtual Room Header Simulation -->
+                            <!-- Header -->
                             <div class="flex items-center justify-between pb-4 border-b border-slate-200">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                                        <i class="fa-solid fa-video text-lg"></i>
+                                    <div class="w-10 h-10 rounded-xl bg-blue-100 text-[#2B4C8C] flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-chalkboard-user text-lg"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-slate-900 text-sm">BEhelp Meet Classroom</h4>
-                                        <p class="text-xs text-blue-700 font-bold flex items-center gap-1">
-                                            <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span> Sesión en vivo interactiva
+                                        <h4 class="font-bold text-slate-900 text-sm">Aulas Virtuales BEhelp</h4>
+                                        <p class="text-xs text-green-600 font-bold flex items-center gap-1">
+                                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Clases síncronas en vivo
                                         </p>
                                     </div>
                                 </div>
-                                <span class="bg-blue-700 text-white font-extrabold text-xs px-2.5 py-1 rounded-lg">A1 - C2</span>
+                                <span class="bg-[#2B4C8C] text-white font-extrabold text-xs px-2.5 py-1 rounded-lg">MCER A1-C2</span>
                             </div>
 
-                            <!-- Course Flag Selection Cards -->
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200 flex flex-col justify-between">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-2xl">🇬🇧</span>
-                                        <span class="text-[10px] uppercase font-bold bg-blue-700 text-white px-2 py-0.5 rounded-md">Inglés</span>
-                                    </div>
-                                    <h5 class="font-bold text-slate-900 text-sm">General & Business</h5>
-                                    <p class="text-[11px] text-slate-600 mt-1">3 meses por nivel</p>
-                                </div>
-
-                                <div class="p-4 bg-gradient-to-br from-red-50 to-red-100/50 rounded-2xl border border-red-200 flex flex-col justify-between">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-2xl">🇫🇷</span>
-                                        <span class="text-[10px] uppercase font-bold bg-red-600 text-white px-2 py-0.5 rounded-md">Francés</span>
-                                    </div>
-                                    <h5 class="font-bold text-slate-900 text-sm">Français Général</h5>
-                                    <p class="text-[11px] text-slate-600 mt-1">3 meses por nivel</p>
-                                </div>
-                            </div>
-
-                            <!-- Live Schedule Option Widget -->
-                            <div class="bg-slate-900 text-white rounded-2xl p-4 space-y-3">
-                                <p class="text-xs font-bold text-slate-300 uppercase tracking-wider">Modalidades Disponibles:</p>
-                                
-                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
+                            <!-- Course Offerings Summary -->
+                            <div class="space-y-2.5">
+                                <div class="p-3.5 bg-blue-50/70 rounded-2xl border border-blue-200 flex items-center justify-between">
                                     <div class="flex items-center gap-3">
-                                        <i class="fa-solid fa-calendar-days text-blue-400 text-lg"></i>
-                                        <div class="text-left">
-                                            <p class="text-xs font-bold text-white">Entre Semana</p>
-                                            <p class="text-[11px] text-slate-300">3 sesiones x 40 minutos</p>
+                                        <span class="text-xl">🇬🇧</span>
+                                        <div>
+                                            <p class="text-xs font-bold text-slate-900">Inglés Niños, Jóvenes y Adultos</p>
+                                            <p class="text-[11px] text-slate-500">Fonética, Conversación y Certificación</p>
                                         </div>
                                     </div>
-                                    <span class="text-xs text-blue-300 font-bold bg-blue-950 border border-blue-800 px-2 py-1 rounded">L - M - V</span>
+                                    <span class="text-[10px] uppercase font-bold bg-[#2B4C8C] text-white px-2 py-0.5 rounded">A1 - C2</span>
                                 </div>
 
-                                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors border border-slate-700">
+                                <div class="p-3.5 bg-red-50/70 rounded-2xl border border-red-200 flex items-center justify-between">
                                     <div class="flex items-center gap-3">
-                                        <i class="fa-solid fa-bolt text-red-400 text-lg"></i>
-                                        <div class="text-left">
-                                            <p class="text-xs font-bold text-white">Sabatino Intensivo</p>
-                                            <p class="text-[11px] text-slate-300">1 sesión x 2 hrs continuas</p>
+                                        <span class="text-xl">🇫🇷</span>
+                                        <div>
+                                            <p class="text-xs font-bold text-slate-900">Francés General (12+ años)</p>
+                                            <p class="text-[11px] text-slate-500">Estructurado de A1 a C2</p>
                                         </div>
                                     </div>
-                                    <span class="text-xs text-red-300 font-bold bg-red-950 border border-red-800 px-2 py-1 rounded">Sábados</span>
+                                    <span class="text-[10px] uppercase font-bold bg-[#E53845] text-white px-2 py-0.5 rounded">A1 - C2</span>
                                 </div>
                             </div>
 
-                            <!-- Duration Guarantee Highlight -->
-                            <div class="flex items-center gap-3 p-3 bg-blue-50 border border-blue-200 text-blue-900 rounded-xl text-xs font-semibold">
-                                <i class="fa-solid fa-shield-halved text-red-600 text-base flex-shrink-0"></i>
-                                <span>Garantía de avance BEhelp Assessors: Concluyes tu nivel oficial en exactamente <strong>3 meses</strong>.</span>
+                            <!-- Flexible Schedule Callout -->
+                            <div class="p-4 bg-slate-900 text-white rounded-2xl space-y-2 text-xs">
+                                <div class="flex items-center justify-between font-bold text-amber-400">
+                                    <span><i class="fa-regular fa-clock"></i> Opciones de Horario:</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                    <div class="bg-white/10 p-2 rounded-lg">
+                                        <p class="font-bold">Entre semana:</p>
+                                        <p class="text-slate-300">3 sesiones x 40 min</p>
+                                    </div>
+                                    <div class="bg-white/10 p-2 rounded-lg">
+                                        <p class="font-bold">Sabatino:</p>
+                                        <p class="text-slate-300">2 hrs intensivas</p>
+                                    </div>
+                                </div>
                             </div>
 
+                            <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-[#E53845] hover:bg-red-700 text-white rounded-xl font-bold text-sm text-center block transition-colors">
+                                Solicitar Información Inmediata <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -288,928 +298,686 @@
         </div>
     </section>
 
-    <!-- Stats Banner -->
-    <section class="bg-slate-900 text-white py-10 border-y border-slate-800">
+    <!-- About Us, Mission & Vision Section -->
+    <section id="nosotros" class="py-20 bg-white border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-black text-blue-400">100%</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-semibold">Clases En Vivo por Google Meet</p>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[#E53845] text-xs font-black tracking-widest uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">Conócenos</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Sobre BEhelp Assessors</h2>
+                <p class="text-slate-600 mt-3 text-base sm:text-lg">¡Tus asesores en un click!</p>
+            </div>
+
+            <!-- About Main Card -->
+            <div class="bg-[#F5FAF9] border border-blue-200/80 rounded-3xl p-6 sm:p-10 mb-12 shadow-sm">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-20 h-20 shrink-0 bg-[#2B4C8C] text-white rounded-2xl flex items-center justify-center text-3xl font-black shadow-md">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="space-y-3 text-slate-700 leading-relaxed text-base">
+                        <p>
+                            Somos un centro de capacitación especializado en la enseñanza de los idiomas que inició operaciones en el año 2021 en Villahermosa, Tabasco, México. Nuestro modelo educativo se desarrolla completamente en modalidad en línea mediante clases síncronas.
+                        </p>
+                        <p>
+                            Contamos cursos de inglés y francés desde el nivel A1 hasta el nivel C2, siguiendo los lineamientos del Marco Común Europeo (MCER), garantizando así una formación estructurada y reconocida internacionalmente. Además, contamos con cursos de preparación para certificaciones Cambridge y emitimos constancias con valor curricular SEP-CONOCER.
+                        </p>
+                        <p class="font-semibold text-slate-900 border-l-4 border-[#E53845] pl-3 py-1">
+                            Nuestra fundadora y coordinadora académica cuenta con más de 28 años de experiencia en la enseñanza de las lenguas y preparación de docentes.
+                        </p>
+                    </div>
                 </div>
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-black text-red-500">3 Meses</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-semibold">Duración Exacta por Nivel</p>
+            </div>
+
+            <!-- Mission & Vision Cards -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Mission -->
+                <div class="bg-white border-2 border-slate-100 hover:border-blue-200 p-8 rounded-3xl shadow-sm transition-all hover:shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-[#2B4C8C] flex items-center justify-center text-xl font-bold mb-5">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Misión</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        BEhelp busca ser el apoyo del Sistema Educativo Nacional en la generación del aprendizaje y reforzamiento de la lengua inglesa como segunda lengua en México, permitiendo que los profesionistas sean más competitivos y se integren exitosamente en un entorno globalizado, además de potenciar su desarrollo mediante el aprendizaje del idioma francés.
+                    </p>
                 </div>
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-black text-blue-400">A1 a C2</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-semibold">Marco Común Europeo</p>
-                </div>
-                <div class="space-y-1">
-                    <p class="text-3xl sm:text-4xl font-black text-red-500">Grupos</p>
-                    <p class="text-xs sm:text-sm text-slate-300 font-semibold">Reducidos para Máxima Práctica</p>
+
+                <!-- Vision -->
+                <div class="bg-white border-2 border-slate-100 hover:border-red-200 p-8 rounded-3xl shadow-sm transition-all hover:shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-red-100 text-[#E53845] flex items-center justify-center text-xl font-bold mb-5">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Visión</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base mb-3">
+                        BEhelp será reconocida a nivel nacional por la excelencia y calidad en sus servicios de cursos en idiomas. Este prestigio permitirá expandir nuestras operaciones hacia América Latina y Europa, consolidándonos como una plataforma confiable para el aprendizaje y apoyo académico en inglés, francés y español.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Contaremos con un equipo sólido y comprometido de profesionales en la enseñanza, capaces de brindar acompañamiento personalizado y accesible a estudiantes de todas las edades, fortaleciendo así nuestro compromiso con la educación de calidad sin fronteras.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Methodology & Value Proposition -->
-    <section id="metodologia" class="py-20 bg-white">
+    <!-- Benefits & Methodology Section -->
+    <section id="metodologia" class="py-20 bg-[#F5FAF9]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100">¿Por qué BEhelp Assessors?</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3 tracking-tight">
-                    Metodología de Inmersión y Conversación
-                </h2>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Aprende a hablar con fluidez desde la primera clase. Nuestro enfoque práctico te brinda herramientas reales de comunicación oral y escrita.
-                </p>
+                <span class="text-[#2B4C8C] text-xs font-black tracking-widest uppercase bg-blue-100/60 px-3 py-1 rounded-full border border-blue-200">¿Por qué elegirnos?</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Conoce los beneficios de nuestros cursos</h2>
+                <p class="text-slate-600 mt-2 text-base">Programas diseñados para garantizar un aprendizaje efectivo y flexible.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-xl hover:border-blue-500 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-blue-700/20">
-                        <i class="fa-solid fa-headset"></i>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-[#2B4C8C] flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-certificate"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Google Meet Interactivo</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Conéctate desde tu computadora o smartphone sin instalaciones complicadas. Interacción directa con tu docente en tiempo real.
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Valor Curricular</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Constancias emitidas con respaldo y valor curricular Red SEP-CONOCER.
                     </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-xl hover:border-red-500 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-red-600 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-red-600/20">
+                <!-- Benefit 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-[#E53845] flex items-center justify-center text-xl font-bold mb-4">
                         <i class="fa-solid fa-calendar-days"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Programa Estructurado de 3 Meses</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Avanza paso a paso de manera constante. Cada nivel (A1, A2, B1, B2, C1, C2) se completa de forma integral en un trimestre.
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">3 Meses por Nivel</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Avanza de forma consistente y estructurada con planes acordes al MCER.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 hover:shadow-xl hover:border-blue-500 transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                        <i class="fa-solid fa-award text-red-500"></i>
+                <!-- Benefit 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-[#2B4C8C] flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-users"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Preparación y Certificación</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Alineados al Marco Común Europeo de Referencia. Te preparamos para evaluaciones oficiales como TOEFL, IELTS, DELF y DALF.
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Grupos Reducidos</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Máximo 8 estudiantes por grupo para asegurar atención personalizada.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-[#E53845] flex items-center justify-center text-xl font-bold mb-4">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2">Clases Grabadas</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Vía Google Meet. Si no logras conectarte en vivo, puedes repasar las sesiones.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Course Program Section (Inglés & Francés Tabs) -->
-    <section id="idiomas" class="py-20 bg-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Oferta Académica BEhelp Assessors</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Cursos de Inglés y Francés</h2>
-                <p class="text-slate-600 mt-3">Selecciona el idioma para explorar nuestro temario y estructura por niveles.</p>
-                
-                <!-- Language Tab Switcher -->
-                <div class="inline-flex p-1.5 bg-white rounded-2xl shadow-sm border border-slate-200 mt-8 gap-2">
-                    <button id="tabEnglishBtn" onclick="switchLanguageTab('english')" class="px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 bg-blue-700 text-white shadow-md">
-                        <span class="text-lg">🇬🇧</span> Programa de Inglés
-                    </button>
-                    <button id="tabFrenchBtn" onclick="switchLanguageTab('french')" class="px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-slate-700 hover:text-slate-900">
-                        <span class="text-lg">🇫🇷</span> Programa de Francés
-                    </button>
-                </div>
-            </div>
-
-            <!-- English Course Content Block -->
-            <div id="englishTabContent" class="space-y-8">
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 grid lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 space-y-4">
-                        <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-800 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">
-                            <i class="fa-solid fa-globe"></i> English Language Proficiency • BEhelp Assessors
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Curso de Inglés en Línea (A1 a C2)</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Diseñado para desarrollar fluidez auditiva, oral y escrita. Inicia desde cero (A1) o perfecciona tus conocimientos académicos y laborales hasta alcanzar el nivel avanzado (C2).
-                        </p>
-
-                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm shrink-0">1</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-sm">Inglés Práctico & Negocios</h4>
-                                    <p class="text-xs text-slate-500">Enfoque laboral y situacional.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm shrink-0">2</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-sm">Sesiones Dinámicas en Vivo</h4>
-                                    <p class="text-xs text-slate-500">Práctica constante por Google Meet.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-4 flex flex-wrap gap-3">
-                            <a href="#horarios" class="px-5 py-2.5 bg-blue-700 text-white rounded-xl font-bold text-sm hover:bg-blue-800 transition-colors shadow-sm">Ver Horarios de Inglés</a>
-                            <a href="#registro" class="px-5 py-2.5 bg-slate-100 text-slate-800 border border-slate-300 rounded-xl font-bold text-sm hover:bg-slate-200 transition-colors">Solicitar Información</a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 bg-gradient-to-br from-blue-900 via-slate-900 to-slate-900 text-white p-6 sm:p-8 rounded-2xl space-y-4 border-t-4 border-blue-600">
-                        <h4 class="font-bold text-lg text-blue-300 flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap"></i> Niveles de Inglés (3 meses c/u):
-                        </h4>
-                        <ul class="space-y-3 text-xs sm:text-sm">
-                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
-                                <span><strong class="text-blue-400">A1 - A2:</strong> Básico / Elemental</span>
-                                <span class="bg-blue-900/80 border border-blue-700 px-2 py-0.5 rounded text-[11px] text-blue-300">3 meses c/u</span>
-                            </li>
-                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
-                                <span><strong class="text-white">B1 - B2:</strong> Intermedio / Independiente</span>
-                                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px] text-slate-300">3 meses c/u</span>
-                            </li>
-                            <li class="flex items-center justify-between pb-2">
-                                <span><strong class="text-red-400">C1 - C2:</strong> Avanzado / Competencia Nativa</span>
-                                <span class="bg-red-950 border border-red-800 px-2 py-0.5 rounded text-[11px] text-red-300">3 meses c/u</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- French Course Content Block (Hidden by default) -->
-            <div id="frenchTabContent" class="space-y-8 hidden">
-                <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 grid lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 space-y-4">
-                        <div class="inline-flex items-center gap-2 text-xs font-bold text-red-700 bg-red-50 px-3 py-1 rounded-lg border border-red-200">
-                            <i class="fa-solid fa-tower-observation"></i> Programme de Francais • BEhelp Assessors
-                        </div>
-                        <h3 class="text-2xl sm:text-3xl font-black text-slate-900">Curso de Francés en Línea (A1 a C2)</h3>
-                        <p class="text-slate-600 text-sm leading-relaxed">
-                            Aprende francés con una metodología estructurada que facilita la pronunciación, la gramática aplicada y la conversación fluida para estudios, trabajo o procesos migratorios.
-                        </p>
-
-                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm shrink-0">1</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-sm">Expresión Oral y Auditiva</h4>
-                                    <p class="text-xs text-slate-500">Práctica guiada constante.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm shrink-0">2</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 text-sm">Alineado a Exámenes DELF/DALF</h4>
-                                    <p class="text-xs text-slate-500">Preparación completa de 3 meses por nivel.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-4 flex flex-wrap gap-3">
-                            <a href="#horarios" class="px-5 py-2.5 bg-red-600 text-white rounded-xl font-bold text-sm hover:bg-red-700 transition-colors shadow-sm">Ver Horarios de Francés</a>
-                            <a href="#registro" class="px-5 py-2.5 bg-slate-100 text-slate-800 border border-slate-300 rounded-xl font-bold text-sm hover:bg-slate-200 transition-colors">Solicitar Información</a>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-5 bg-gradient-to-br from-red-950 via-slate-900 to-slate-900 text-white p-6 sm:p-8 rounded-2xl space-y-4 border-t-4 border-red-600">
-                        <h4 class="font-bold text-lg text-red-300 flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap"></i> Niveles de Francés (3 meses c/u):
-                        </h4>
-                        <ul class="space-y-3 text-xs sm:text-sm">
-                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
-                                <span><strong class="text-red-400">A1 - A2:</strong> Débutant / Élémentaire</span>
-                                <span class="bg-red-950 border border-red-800 px-2 py-0.5 rounded text-[11px] text-red-300">3 meses c/u</span>
-                            </li>
-                            <li class="flex items-center justify-between pb-2 border-b border-slate-800">
-                                <span><strong class="text-white">B1 - B2:</strong> Indépendant / Avancé</span>
-                                <span class="bg-slate-800 px-2 py-0.5 rounded text-[11px] text-slate-300">3 meses c/u</span>
-                            </li>
-                            <li class="flex items-center justify-between pb-2">
-                                <span><strong class="text-blue-400">C1 - C2:</strong> Autonome / Maîtrise</span>
-                                <span class="bg-blue-950 border border-blue-800 px-2 py-0.5 rounded text-[11px] text-blue-300">3 meses c/u</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Schedules Section -->
-    <section id="horarios" class="py-20 bg-white">
+    <!-- Courses Catalog Section -->
+    <section id="idiomas" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Flexibilidad de Horarios</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Modalidades Vía Google Meet</h2>
-                <p class="text-slate-600 mt-3">Elige la modalidad que mejor se adapte a tus actividades diarias en BEhelp Assessors.</p>
+                <span class="text-[#E53845] text-xs font-black tracking-widest uppercase bg-red-50 px-3 py-1 rounded-full border border-red-100">Oferta Académica</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Nuestros Cursos</h2>
+                <p class="text-slate-600 mt-2 text-base">Alineados con los estándares del Marco Común Europeo de Referencia (MCER).</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <!-- Weekday Option Card -->
-                <div class="bg-gradient-to-b from-slate-50 to-blue-50/40 rounded-3xl p-8 border-2 border-blue-200 hover:border-blue-600 transition-all shadow-md relative flex flex-col justify-between">
-                    <div class="absolute -top-3.5 right-6 bg-blue-700 text-white text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-sm">
-                        Entre Semana
-                    </div>
-
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-[#F5FAF9] border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
                     <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-bold">
-                                <i class="fa-solid fa-calendar-week"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900">Modalidad Entre Semana</h3>
-                                <p class="text-xs font-bold text-blue-700">3 Sesiones Semanales</p>
-                            </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🇬🇧</span>
+                            <span class="bg-[#2B4C8C] text-white text-xs font-bold px-3 py-1 rounded-full">6 - 11 Años</span>
                         </div>
-
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Inglés para Niños</h3>
+                        <p class="text-xs text-[#2B4C8C] font-bold mb-3">Desde Nivel A1.1 hasta C2.2</p>
                         <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                            Avanza de forma constante con sesiones cortas de alta concentración de lunes a viernes.
+                            Diseñado especialmente para la etapa infantil con metodologías lúdicas y dinámicas que fomentan la confianza oral.
                         </p>
-
-                        <div class="space-y-4 mb-8">
-                            <div class="p-4 bg-white rounded-2xl border border-slate-200 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-regular fa-clock text-blue-700 text-lg"></i>
-                                    <div>
-                                        <p class="text-xs font-bold text-slate-900">Duración por sesión</p>
-                                        <p class="text-xs text-slate-500">40 Minutos intensivos</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-bold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-lg">3x por semana</span>
-                            </div>
-
-                            <div class="p-4 bg-white rounded-2xl border border-slate-200 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-hourglass-start text-blue-700 text-lg"></i>
-                                    <div>
-                                        <p class="text-xs font-bold text-slate-900">Duración del Nivel</p>
-                                        <p class="text-xs text-slate-500">3 Meses completos</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded-lg">1 Trimestre</span>
-                            </div>
-
-                            <div class="space-y-2 pt-2">
-                                <p class="text-xs font-bold text-slate-800 uppercase tracking-wider">Horarios a elegir:</p>
-                                <div class="grid grid-cols-2 gap-2 text-xs font-medium">
-                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center">Mañana: 07:00 - 07:40 AM</div>
-                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center">Tarde: 06:00 - 06:40 PM</div>
-                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center">Noche: 07:00 - 07:40 PM</div>
-                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center">Noche: 08:00 - 08:40 PM</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <a href="#registro" onclick="preselectSchedule('Entre Semana')" class="w-full py-3.5 bg-blue-700 hover:bg-blue-800 text-white font-extrabold text-sm rounded-xl text-center shadow-md transition-all">
-                        Elegir Entre Semana
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-white border border-slate-300 hover:border-[#2B4C8C] text-[#2B4C8C] font-bold text-xs rounded-xl text-center block transition-colors">
+                        Inscribir a Mi Hijo <i class="fa-solid fa-arrow-right ml-1"></i>
                     </a>
                 </div>
 
-                <!-- Saturday Option Card -->
-                <div class="bg-gradient-to-b from-slate-50 to-red-50/40 rounded-3xl p-8 border-2 border-red-200 hover:border-red-600 transition-all shadow-md relative flex flex-col justify-between">
-                    <div class="absolute -top-3.5 right-6 bg-red-600 text-white text-xs font-extrabold uppercase px-3 py-1 rounded-full shadow-sm">
-                        Sabatino
-                    </div>
-
+                <!-- Course 2 -->
+                <div class="bg-[#F5FAF9] border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
                     <div>
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold text-slate-900">Modalidad Sabatina</h3>
-                                <p class="text-xs font-bold text-red-600">1 Sesión Intensiva Semanal</p>
-                            </div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🇬🇧</span>
+                            <span class="bg-[#2B4C8C] text-white text-xs font-bold px-3 py-1 rounded-full">12+ Años</span>
                         </div>
-
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Inglés para Adolescentes y Adultos</h3>
+                        <p class="text-xs text-[#2B4C8C] font-bold mb-3">Desde Nivel A1 hasta C2</p>
                         <p class="text-slate-600 text-sm mb-6 leading-relaxed">
-                            Ideal si prefieres concentrar tu estudio los fines de semana sin interrumpir tu jornada laboral.
+                            Cursos completos para estudio o desarrollo profesional con enfoque en fluidez, vocabulario y gramática práctica.
                         </p>
-
-                        <div class="space-y-4 mb-8">
-                            <div class="p-4 bg-white rounded-2xl border border-slate-200 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-regular fa-clock text-red-600 text-lg"></i>
-                                    <div>
-                                        <p class="text-xs font-bold text-slate-900">Duración por sesión</p>
-                                        <p class="text-xs text-slate-500">2 Horas continuas intensivas</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-bold bg-red-100 text-red-800 px-2.5 py-1 rounded-lg">Cada Sábado</span>
-                            </div>
-
-                            <div class="p-4 bg-white rounded-2xl border border-slate-200 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <i class="fa-solid fa-hourglass-start text-red-600 text-lg"></i>
-                                    <div>
-                                        <p class="text-xs font-bold text-slate-900">Duración del Nivel</p>
-                                        <p class="text-xs text-slate-500">3 Meses completos</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2.5 py-1 rounded-lg">1 Trimestre</span>
-                            </div>
-
-                            <div class="space-y-2 pt-2">
-                                <p class="text-xs font-bold text-slate-800 uppercase tracking-wider">Horarios sabatinos:</p>
-                                <div class="grid grid-cols-2 gap-2 text-xs font-medium">
-                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center">Matutino: 09:00 - 11:00 AM</div>
-                                    <div class="p-2 bg-white rounded-lg border border-slate-200 text-center">Mediodía: 11:30 AM - 01:30 PM</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
-                    <a href="#registro" onclick="preselectSchedule('Sabatino')" class="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-extrabold text-sm rounded-xl text-center shadow-md transition-all">
-                        Elegir Sabatino
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-white border border-slate-300 hover:border-[#2B4C8C] text-[#2B4C8C] font-bold text-xs rounded-xl text-center block transition-colors">
+                        Inscribirme Ahora <i class="fa-solid fa-arrow-right ml-1"></i>
                     </a>
                 </div>
 
+                <!-- Course 3 -->
+                <div class="bg-[#F5FAF9] border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🇫🇷</span>
+                            <span class="bg-[#E53845] text-white text-xs font-bold px-3 py-1 rounded-full">12+ Años</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Curso de Francés General</h3>
+                        <p class="text-xs text-[#E53845] font-bold mb-3">Desde Nivel A1 hasta C2</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Aprende la lengua francesa con estructura sólida. Ideal para desarrollo académico, viajes y oportunidades laborales.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-white border border-slate-300 hover:border-[#E53845] text-[#E53845] font-bold text-xs rounded-xl text-center block transition-colors">
+                        Más Información <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="bg-[#F5FAF9] border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🗣️</span>
+                            <span class="bg-[#2B4C8C] text-white text-xs font-bold px-3 py-1 rounded-full">Especializado</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Fonética y Fonología del Inglés</h3>
+                        <p class="text-xs text-[#2B4C8C] font-bold mb-3">Mejora tu pronunciación</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Perfecciona tu acento, lectura fluida y gana confianza total al momento de hablar en público o en entornos profesionales.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-white border border-slate-300 hover:border-[#2B4C8C] text-[#2B4C8C] font-bold text-xs rounded-xl text-center block transition-colors">
+                        Consultar Horarios <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="bg-[#F5FAF9] border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">🏅</span>
+                            <span class="bg-[#2B4C8C] text-white text-xs font-bold px-3 py-1 rounded-full">Certificación</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Certificación Cambridge</h3>
+                        <p class="text-xs text-[#2B4C8C] font-bold mb-3">Nivel B1 - B2</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Preparación intensiva orientada a aprobar los exámenes internacionales Cambridge con estrategias y simulación de pruebas.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-white border border-slate-300 hover:border-[#2B4C8C] text-[#2B4C8C] font-bold text-xs rounded-xl text-center block transition-colors">
+                        Saber Más <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="bg-[#F5FAF9] border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-lg transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-3xl">⚡</span>
+                            <span class="bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">A Tu Medida</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Cursos Personalizados</h3>
+                        <p class="text-xs text-amber-600 font-bold mb-3">Inglés o Francés 1 a 1</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Atención individual con horarios flexibles adaptados a tus objetivos específicos de negocios, trabajo o viaje.
+                        </p>
+                    </div>
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-3 bg-white border border-slate-300 hover:border-amber-500 text-amber-600 font-bold text-xs rounded-xl text-center block transition-colors">
+                        Cotizar Curso Personalizado <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Levels CEFR Framework Section (A1 to C2) -->
-    <section id="niveles" class="py-20 bg-slate-900 text-white">
+    <!-- Academic Coordinator Section -->
+    <section id="coordinacion" class="py-20 bg-gradient-to-b from-white to-blue-50/50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-red-400 uppercase tracking-widest bg-red-950 px-3 py-1 rounded-full border border-red-800">Marco Común Europeo (MCER / CECRL)</span>
-                <h2 class="text-3xl sm:text-4xl font-black mt-3">Tu Ruta de Aprendizaje de A1 a C2</h2>
-                <p class="text-slate-300 mt-3 text-sm sm:text-base">
-                    En <strong>BEhelp Assessors</strong>, cada nivel oficial de idioma tiene una duración de <strong>3 meses</strong>.
-                </p>
-            </div>
-
-            <!-- Level Cards Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- A1 -->
-                <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 hover:border-blue-500 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl font-black text-blue-400">A1</span>
-                            <span class="text-[11px] font-bold bg-blue-900/80 text-blue-200 px-2.5 py-1 rounded-md">Principiante</span>
+            <div class="bg-white border border-blue-200 rounded-3xl p-8 sm:p-12 shadow-xl">
+                <div class="grid lg:grid-cols-12 gap-10 items-start">
+                    
+                    <div class="lg:col-span-4 text-center lg:text-left">
+                        <div class="w-28 h-28 mx-auto lg:mx-0 rounded-3xl bg-gradient-to-tr from-[#2B4C8C] to-[#E53845] p-1 shadow-lg mb-4">
+                            <div class="w-full h-full bg-white rounded-[22px] flex items-center justify-center text-4xl text-[#2B4C8C]">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
                         </div>
-                        <h4 class="font-bold text-white text-base mb-2">Iniciación y Bases</h4>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                            Frases cotidianas, saludos, expresiones sencillas y comunicación inicial para desenvolverse en el día a día.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-calendar text-blue-400"></i> 3 Meses</span>
-                        <span class="font-bold text-blue-400">Sin requisitos</span>
-                    </div>
-                </div>
-
-                <!-- A2 -->
-                <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 hover:border-blue-500 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl font-black text-blue-400">A2</span>
-                            <span class="text-[11px] font-bold bg-blue-900/80 text-blue-200 px-2.5 py-1 rounded-md">Elemental</span>
+                        <h3 class="text-2xl font-black text-slate-900">Dra. Monserrat Angulo</h3>
+                        <p class="text-[#E53845] font-bold text-sm mt-1">Coordinadora de Docentes y Fundadora</p>
+                        
+                        <!-- Formación Académica Box -->
+                        <div class="mt-6 p-4 bg-[#F5FAF9] rounded-2xl border border-slate-200 text-left">
+                            <p class="font-black text-xs uppercase tracking-wider text-[#2B4C8C] mb-2"><i class="fa-solid fa-award mr-1"></i> Formación Académica</p>
+                            <ul class="text-xs text-slate-700 space-y-1.5 font-medium">
+                                <li>• Doctorado en Educación.</li>
+                                <li>• Maestría en Docencia.</li>
+                                <li>• Licenciatura en Idiomas: Inglés y Francés.</li>
+                            </ul>
                         </div>
-                        <h4 class="font-bold text-white text-base mb-2">Estructuración Conversacional</h4>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                            Comprensión e intercambio de información sobre hábitos, trabajo, compras y entorno cotidiano.
-                        </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-calendar text-blue-400"></i> 3 Meses</span>
-                        <span class="font-semibold text-slate-400">Acreditar A1</span>
-                    </div>
-                </div>
 
-                <!-- B1 -->
-                <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 hover:border-red-500 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl font-black text-red-500">B1</span>
-                            <span class="text-[11px] font-bold bg-red-950 text-red-200 px-2.5 py-1 rounded-md">Intermedio</span>
+                    <div class="lg:col-span-8 space-y-6 text-slate-700">
+                        <blockquote class="text-base sm:text-lg italic font-medium text-slate-800 border-l-4 border-[#2B4C8C] pl-4 py-1">
+                            "En BEhelp creemos que un buen aprendizaje comienza con grandes maestros. Por eso, contamos con la experiencia y liderazgo de la Dra. Monserrat Angulo, Coordinadora de Docentes, quien respalda la calidad de nuestros cursos."
+                        </blockquote>
+
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-briefcase text-[#E53845]"></i> Trayectoria y Experiencia:
+                            </h4>
+                            <ul class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Más de 28 años de experiencia enseñando inglés y francés en universidades y programas de posgrado.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Certificada en inglés: TKT, CLIL, TOEIC, TOEFL e IELTS.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Certificada en francés: DELF.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Conferencista nacional e internacional en eventos de lenguas extranjeras.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Tres veces becada por la Embajada de EE. UU. para diplomados en pedagogía y didáctica.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Asesora de tesis, artículos científicos y sinodal en exámenes profesionales de licenciados en idiomas.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Organizadora de eventos académicos para estudiantes de idiomas.</span>
+                                </li>
+                                <li class="bg-[#F5FAF9] p-3 rounded-xl border border-slate-200 flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                                    <span>Facilitadora de cursos para universidades extranjeras.</span>
+                                </li>
+                            </ul>
                         </div>
-                        <h4 class="font-bold text-white text-base mb-2">Autonomía Lingüística</h4>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                            Capacidad para expresarse en viajes, redactar textos coherentes y defender puntos de vista con fluidez.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-calendar text-red-500"></i> 3 Meses</span>
-                        <span class="font-semibold text-slate-400">Acreditar A2</span>
-                    </div>
-                </div>
 
-                <!-- B2 -->
-                <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 hover:border-red-500 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl font-black text-red-500">B2</span>
-                            <span class="text-[11px] font-bold bg-red-950 text-red-200 px-2.5 py-1 rounded-md">Intermedio Alto</span>
+                        <div class="bg-blue-50/80 p-4 rounded-2xl border border-blue-200 text-xs sm:text-sm font-semibold text-[#2B4C8C]">
+                            <i class="fa-solid fa-heart text-[#E53845] mr-1"></i> Su compromiso: formar docentes y estudiantes con una enseñanza de calidad, innovadora y con visión global.
                         </div>
-                        <h4 class="font-bold text-white text-base mb-2">Fluidez Profesional</h4>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                            Comprensión de temas complejos y debates técnicos. Interacción fluida y espontánea con hablantes nativos.
-                        </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-calendar text-red-500"></i> 3 Meses</span>
-                        <span class="font-semibold text-slate-400">Acreditar B1</span>
-                    </div>
-                </div>
 
-                <!-- C1 -->
-                <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 hover:border-blue-500 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl font-black text-blue-400">C1</span>
-                            <span class="text-[11px] font-bold bg-blue-900/80 text-blue-200 px-2.5 py-1 rounded-md">Avanzado</span>
-                        </div>
-                        <h4 class="font-bold text-white text-base mb-2">Dominio Eficaz</h4>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                            Uso ágil y flexible del idioma en contextos profesionales, académicos y sociales exigentes.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-calendar text-blue-400"></i> 3 Meses</span>
-                        <span class="font-semibold text-slate-400">Acreditar B2</span>
-                    </div>
                 </div>
-
-                <!-- C2 -->
-                <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 hover:border-red-500 transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl font-black text-red-500">C2</span>
-                            <span class="text-[11px] font-bold bg-red-950 text-red-200 px-2.5 py-1 rounded-md">Maestría Nativa</span>
-                        </div>
-                        <h4 class="font-bold text-white text-base mb-2">Perfeccionamiento Completo</h4>
-                        <p class="text-slate-300 text-xs leading-relaxed mb-4">
-                            Comprensión y expresión equivalente a un hablante nativo con precisión léxica y gramatical impecables.
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-700 flex items-center justify-between text-xs text-slate-300">
-                        <span><i class="fa-regular fa-calendar text-red-500"></i> 3 Meses</span>
-                        <span class="font-semibold text-slate-400">Acreditar C1</span>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Pricing Plans Section -->
-    <section id="precios" class="py-20 bg-slate-50">
+    <!-- Pricing & Promotions Section -->
+    <section id="precios" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-100/80 px-3 py-1 rounded-full">Inversión BEhelp Assessors</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Planes de Inversión Accesibles</h2>
-                <p class="text-slate-600 mt-3">Misma tarifa garantizada para la modalidad Entre Semana o Sabatina.</p>
+                <span class="text-amber-400 text-xs font-black tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full border border-amber-400/30">Inversión Transparente</span>
+                <h2 class="text-3xl sm:text-4xl font-black mt-3">Costos y Promociones Especiales</h2>
+                <p class="text-slate-300 mt-2 text-base">Inicia hoy mismo con facilidades de pago y promociones vigentes.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                
-                <!-- Plan Mensual -->
-                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                <!-- Registration Card -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <span class="absolute top-4 right-4 bg-[#E53845] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                        50% OFF
+                    </span>
                     <div>
-                        <div class="mb-4">
-                            <h3 class="text-xl font-bold text-slate-900">Plan Mensual</h3>
-                            <p class="text-xs text-slate-500 mt-1">Pago mes a mes durante los 3 meses de tu nivel.</p>
-                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-1">Inscripción Única</h3>
+                        <p class="text-slate-400 text-xs mb-6">Pago único al iniciar tu curso de nivel</p>
 
-                        <div class="my-6">
-                            <div class="flex items-baseline gap-1">
-                                <span class="text-4xl font-black text-slate-900">$890</span>
-                                <span class="text-slate-500 font-semibold text-sm">MXN / mes</span>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-1">Incluye clases 100% en vivo vía Google Meet</p>
-                        </div>
-
-                        <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8">
-                            <li class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-check text-blue-700"></i>
-                                <span>Acceso completo a clases con docente certificado</span>
-                            </li>
-                            <li class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-check text-blue-700"></i>
-                                <span>Materiales didácticos digitales incluidos</span>
-                            </li>
-                            <li class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-check text-blue-700"></i>
-                                <span>Evaluaciones de progreso semanales</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <a href="#registro" class="w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm rounded-xl text-center transition-colors">
-                        Inscribirme Mensual
-                    </a>
-                </div>
-
-                <!-- Plan Trimestral Completo (Descuento) -->
-                <div class="bg-gradient-to-b from-blue-900 via-slate-900 to-slate-900 text-white rounded-3xl p-8 shadow-xl relative flex flex-col justify-between border-2 border-red-600">
-                    <div class="absolute -top-3.5 right-6 bg-red-600 text-white text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
-                        Ahorra 20%
-                    </div>
-
-                    <div>
-                        <div class="mb-4">
-                            <h3 class="text-xl font-bold text-white">Pago Completo de Nivel (3 Meses)</h3>
-                            <p class="text-xs text-blue-200 mt-1">Asegura tu lugar y ahorra al cubrir el trimestre.</p>
-                        </div>
-
-                        <div class="my-6">
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-black text-white">$2,130</span>
-                                <span class="text-slate-400 line-through text-sm">$2,670 MXN</span>
-                            </div>
-                            <p class="text-xs text-red-400 font-bold mt-1">Pago único por los 3 meses completos</p>
+                        <div class="flex items-baseline gap-3 mb-6">
+                            <span class="text-4xl sm:text-5xl font-black text-white">$400</span>
+                            <span class="text-lg text-slate-400 line-through">$800 MXN</span>
                         </div>
 
                         <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
-                            <li class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-red-500"></i>
-                                <span><strong>Beneficios completos</strong> del plan mensual</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-400"></i>
+                                <span>Acceso a Examen Institucional</span>
                             </li>
-                            <li class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-red-500"></i>
-                                <span>Constancia digital de acreditación de nivel incluida</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-400"></i>
+                                <span>Constancia con Valor Curricular Red SEP-CONOCER</span>
                             </li>
-                            <li class="flex items-center gap-2.5">
-                                <i class="fa-solid fa-circle-check text-red-500"></i>
-                                <span>Tutoría personalizada 1 a 1 de reforzamiento</span>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-400"></i>
+                                <span>Materiales digitales incluidos</span>
                             </li>
                         </ul>
                     </div>
 
-                    <a href="#registro" class="w-full py-3.5 bg-red-600 hover:bg-red-700 text-white font-extrabold text-sm rounded-xl text-center shadow-lg shadow-red-600/30 transition-all">
-                        Inscribirme con Descuento
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-4 bg-[#E53845] hover:bg-red-600 text-white font-black text-sm rounded-2xl text-center transition-colors">
+                        ¡Aprovechar Promo $400 MXN!
                     </a>
                 </div>
 
+                <!-- Monthly Tuition Card -->
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between">
+                    <span class="absolute top-4 right-4 bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                        25% OFF
+                    </span>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-1">Colegiatura Mensual</h3>
+                        <p class="text-slate-400 text-xs mb-6">Aplicable para cursos de Nivel (A1 - C2)</p>
+
+                        <div class="flex items-baseline gap-3 mb-6">
+                            <span class="text-4xl sm:text-5xl font-black text-white">$1,200</span>
+                            <span class="text-lg text-slate-400 line-through">$1,600 MXN</span>
+                        </div>
+
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-400"></i>
+                                <span>Duración: 3 meses por nivel completo</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-400"></i>
+                                <span>Opción entre semana o sabatino</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-green-400"></i>
+                                <span>Acceso a grabaciones de clase</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="w-full py-4 bg-[#2B4C8C] hover:bg-blue-600 text-white font-black text-sm rounded-2xl text-center transition-colors">
+                        Inscribirme con Colegiatura Promocional
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Registration & Lead Capture Form -->
-    <section id="registro" class="py-20 bg-white border-t border-slate-200">
+    <!-- Student Testimonials Section -->
+    <section id="testimonios" class="py-20 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Info Banner -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200">Inscripción BEhelp Assessors</span>
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
-                        Reserva tu Clase Demo o solicita Información
-                    </h2>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Completa tus datos para enviarte la liga directa de <strong>Google Meet</strong> y los detalles del grupo de Inglés o Francés.
-                    </p>
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-[#2B4C8C] text-xs font-black tracking-widest uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">Opiniones Reales</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Lo que dicen nuestros estudiantes</h2>
+                <p class="text-slate-600 mt-2 text-base">Testimonios verificados en nuestra comunidad.</p>
+            </div>
 
-                    <div class="space-y-4 pt-2 text-sm text-slate-700">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
-                                <i class="fa-brands fa-whatsapp text-lg"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-slate-900">Atención WhatsApp</p>
-                                <p class="text-xs text-slate-500">Respuesta inmediata</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold">
-                                <i class="fa-solid fa-envelope text-lg"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-slate-900">Correo BEhelp Assessors</p>
-                                <p class="text-xs text-slate-500">contacto@behelpassessors.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Form Card -->
-                <div class="lg:col-span-7 bg-slate-50 p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-lg">
-                    <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                        
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-800 uppercase mb-1">Nombre Completo *</label>
-                                <input type="text" required placeholder="Ej. María García" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all bg-white">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-800 uppercase mb-1">Correo Electrónico *</label>
-                                <input type="email" required placeholder="tu@correo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all bg-white">
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-800 uppercase mb-1">WhatsApp / Teléfono *</label>
-                                <input type="tel" required placeholder="+52 55 1234 5678" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all bg-white">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-800 uppercase mb-1">Idioma de Interés *</label>
-                                <select id="courseSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all font-semibold text-slate-800 bg-white">
-                                    <option value="Inglés">🇬🇧 Inglés (A1 - C2)</option>
-                                    <option value="Francés">🇫🇷 Francés (A1 - C2)</option>
-                                    <option value="Ambos">🇬🇧 + 🇫🇷 Ambos Idiomas</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-800 uppercase mb-1">Modalidad de Horario *</label>
-                                <select id="scheduleSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all font-semibold text-slate-800 bg-white">
-                                    <option value="Entre Semana">Entre Semana (3 sesiones x 40 min)</option>
-                                    <option value="Sabatino">Sabatino Intensivo (1 sesión x 2 hrs)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-800 uppercase mb-1">Nivel Aproximado</label>
-                                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all font-semibold text-slate-800 bg-white">
-                                    <option value="No lo sé">No lo sé (Requiero examen de ubicación)</option>
-                                    <option value="A1">A1 - Principiante</option>
-                                    <option value="A2">A2 - Básico</option>
-                                    <option value="B1">B1 - Intermedio</option>
-                                    <option value="B2">B2 - Intermedio Alto</option>
-                                    <option value="C1-C2">C1 / C2 - Avanzado</option>
-                                </select>
-                            </div>
-                        </div>
-
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="p-6 bg-[#F5FAF9] rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#2B4C8C] text-white font-bold flex items-center justify-center">AI</div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-800 uppercase mb-1">¿Algún comentario o duda?</label>
-                            <textarea rows="3" placeholder="Coméntanos tu disponibilidad de horario..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none text-sm transition-all bg-white"></textarea>
+                            <h4 class="font-bold text-slate-900 text-sm">Ana Izquierdo</h4>
+                            <p class="text-[11px] text-slate-500">Estudiante BEhelp</p>
                         </div>
-
-                        <button type="submit" class="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-red-600/25 transition-all text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Enviar Solicitud e Iniciar Clase Demo</span>
-                        </button>
-                    </form>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        "¡Las clases son súper dinámicas! Los ejercicios están muy bien preparados, tienen suficientes ejemplos y vocabulario para aprender. Además los profesores son muy buenos y explican con claridad."
+                    </p>
+                    <div class="text-amber-400 text-xs flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
                 </div>
 
+                <!-- Review 2 -->
+                <div class="p-6 bg-[#F5FAF9] rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#E53845] text-white font-bold flex items-center justify-center">FL</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Fernanda LC</h4>
+                            <p class="text-[11px] text-slate-500">Estudiante BEhelp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        "Las mejores clases en línea que sobresalen por su calidad y por la preparación de los maestros. El método es claro, dinámico y efectivo, haciendo que aprender francés e inglés sea una experiencia accesible. Totalmente recomendable!"
+                    </p>
+                    <div class="text-amber-400 text-xs flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="p-6 bg-[#F5FAF9] rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#2B4C8C] text-white font-bold flex items-center justify-center">MH</div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">Mel Her</h4>
+                            <p class="text-[11px] text-slate-500">Estudiante BEhelp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        "Me encantan las clases de francés. Son muy didácticas, divertidas y a un precio y horario muy accesibles."
+                    </p>
+                    <div class="text-amber-400 text-xs flex gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section Accordion -->
-    <section id="faq" class="py-20 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-100/80 px-3 py-1 rounded-full">Resuelve tus Dudas</span>
-                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Preguntas Frecuentes</h2>
-            </div>
-
-            <div class="space-y-4">
+    <!-- Contact & Application Form Section -->
+    <section id="registro" class="py-20 bg-[#F5FAF9]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white border-2 border-blue-200 rounded-3xl p-6 sm:p-10 shadow-xl">
                 
-                <!-- FAQ 1 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50">
-                        <span>¿Cómo se imparten las clases en BEhelp Assessors?</span>
-                        <i id="faqIcon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="faqContent-1" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                        Todas nuestras clases se realizan 100% en vivo a través de Google Meet. Recibirás tu acceso permanente a la sala virtual para interactuar en tiempo real con tu profesor y compañeros.
+                <div class="text-center mb-8">
+                    <div class="w-14 h-14 bg-blue-100 text-[#2B4C8C] rounded-2xl flex items-center justify-center mx-auto text-2xl mb-3">
+                        <i class="fa-solid fa-paper-plane"></i>
                     </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50">
-                        <span>¿Cuánto tiempo toma completar un nivel?</span>
-                        <i id="faqIcon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
-                    </button>
-                    <div id="faqContent-2" class="hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                        Cada nivel formal (A1, A2, B1, B2, C1, C2) tiene una duración estructurada de <strong>3 meses</strong>, tanto en la modalidad Entre Semana (3x40 min) como Sabatina (2 hrs continuas).
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Placement Quiz Modal -->
-    <div id="quizModal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative border border-slate-200 overflow-hidden">
-            <button onclick="closeQuizModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 flex items-center justify-center text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div id="quizStep1" class="space-y-5">
-                <span class="text-xs font-bold text-red-600 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-100">BEhelp Assessors Diagnostic</span>
-                <h3 class="text-2xl font-black text-slate-900">¿Qué idioma deseas evaluar?</h3>
-                <p class="text-slate-600 text-sm">Elige la opción para conocer tu nivel estimado.</p>
-                
-                <div class="grid grid-cols-2 gap-4 pt-2">
-                    <button onclick="selectQuizLang('Inglés')" class="p-4 rounded-2xl border-2 border-blue-200 hover:border-blue-700 text-left transition-all hover:bg-blue-50/50">
-                        <span class="text-3xl">🇬🇧</span>
-                        <p class="font-bold text-slate-900 mt-2">Inglés</p>
-                    </button>
-                    <button onclick="selectQuizLang('Francés')" class="p-4 rounded-2xl border-2 border-red-200 hover:border-red-600 text-left transition-all hover:bg-red-50/50">
-                        <span class="text-3xl">🇫🇷</span>
-                        <p class="font-bold text-slate-900 mt-2">Francés</p>
-                    </button>
-                </div>
-            </div>
-
-            <div id="quizStep2" class="space-y-5 hidden">
-                <span class="text-xs font-bold text-blue-700 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Pregunta 1 de 2</span>
-                <h3 class="text-xl font-black text-slate-900" id="quizQuestionText">¿Cómo describirías tu nivel actual?</h3>
-                
-                <div class="space-y-2.5 pt-2 text-sm">
-                    <button onclick="answerQuiz(1)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-600 hover:bg-blue-50/50 transition-colors">
-                        A) Principiante absoluto.
-                    </button>
-                    <button onclick="answerQuiz(2)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-600 hover:bg-blue-50/50 transition-colors">
-                        B) Entiendo expresiones básicas pero me cuesta hablar.
-                    </button>
-                    <button onclick="answerQuiz(3)" class="w-full p-3.5 rounded-xl border border-slate-200 text-left font-medium hover:border-blue-600 hover:bg-blue-50/50 transition-colors">
-                        C) Puedo conversar sobre temas cotidianos e interactuar.
-                    </button>
-                </div>
-            </div>
-
-            <div id="quizResult" class="space-y-5 hidden text-center py-4">
-                <div class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-3xl mx-auto">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <h3 class="text-2xl font-black text-slate-900">¡Diagnóstico Listo!</h3>
-                <p class="text-sm text-slate-600">
-                    Tu punto de partida recomendado es: <strong id="recommendedLevel" class="text-red-600 font-bold text-lg">A2 (Elemental)</strong>
-                </p>
-                
-                <div class="pt-2">
-                    <a href="#registro" onclick="closeQuizModal()" class="w-full block py-3.5 bg-red-600 hover:bg-red-700 text-white font-extrabold text-sm rounded-xl text-center shadow-md">
-                        Agendar Clase de Prueba Gratis
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notification Toast Container -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 hidden bg-slate-900 text-white p-4 rounded-2xl shadow-2xl border border-slate-700 max-w-sm flex items-start gap-3 transition-all duration-300">
-        <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center shrink-0 font-bold mt-0.5">
-            <i class="fa-solid fa-check"></i>
-        </div>
-        <div>
-            <h5 class="font-bold text-sm text-white" id="toastTitle">BEhelp Assessors</h5>
-            <p class="text-xs text-slate-300 mt-0.5" id="toastMsg">¡Solicitud recibida! Te contactaremos con los datos de acceso a Google Meet.</p>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp CTA Button -->
-    <a href="https://wa.me/?text=Hola%20BEhelp%20Assessors%2C%20quiero%20informes%20sobre%20los%20cursos%20de%20Ingl%C3%A9s%20y%20Franc%C3%A9s." target="_blank" class="fixed bottom-6 left-6 z-40 w-14 h-14 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center text-2xl shadow-xl hover:scale-110 transition-all border-2 border-white">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="space-y-3">
-                    <div class="flex items-center gap-2 text-white font-black text-xl">
-                        <i class="fa-solid fa-language text-red-600"></i> BEhelp <span class="text-red-600">Assessors</span>
-                    </div>
-                    <p class="leading-relaxed">
-                        Centro de capacitación de idiomas en línea. Cursos intensivos de Inglés y Francés desde el nivel A1 hasta el C2 por Google Meet.
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">¿Te gustaría inscribirte a alguno de nuestros cursos?</h2>
+                    <p class="text-slate-600 text-sm mt-2">
+                        Ingresa tus datos en el formulario y nos pondremos en contacto contigo para darle seguimiento a tu solicitud.
                     </p>
                 </div>
+
+                <form id="enrollmentForm" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1.5">Nombre Completo *</label>
+                        <input type="text" id="formName" required placeholder="Ej. María Elena Pérez" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#2B4C8C] focus:ring-2 focus:ring-blue-100 outline-none text-sm transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1.5">Número de WhatsApp *</label>
+                        <input type="tel" id="formPhone" required placeholder="Ej. 9931382480" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#2B4C8C] focus:ring-2 focus:ring-blue-100 outline-none text-sm transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1.5">Curso de Interés *</label>
+                        <select id="formCourse" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#2B4C8C] focus:ring-2 focus:ring-blue-100 outline-none text-sm bg-white transition-all">
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="Francés (12+ años)">Francés (12+ años)</option>
+                            <option value="Inglés para adultos (12+ años)">Inglés para adultos (12+ años)</option>
+                            <option value="Inglés para niños (6-11 años)">Inglés para niños (6-11 años)</option>
+                            <option value="Fonética y Fonología del inglés">Fonética y Fonología del inglés</option>
+                            <option value="Preparación para Certificación Cambridge B1-B2">Preparación para Certificación Cambridge B1-B2</option>
+                            <option value="Curso Personalizado">Curso Personalizado</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-1.5">Comentarios Adicionales</label>
+                        <textarea id="formComments" rows="3" placeholder="Ej. Me interesa el horario sabatino..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#2B4C8C] focus:ring-2 focus:ring-blue-100 outline-none text-sm transition-all"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-[#2B4C8C] hover:bg-blue-800 text-white font-extrabold text-base rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Enviar Solicitud por WhatsApp</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
+                
                 <div>
-                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Programas</h5>
-                    <ul class="space-y-2">
-                        <li><a href="#idiomas" class="hover:text-white">Inglés (A1 - C2)</a></li>
-                        <li><a href="#idiomas" class="hover:text-white">Francés (A1 - C2)</a></li>
-                        <li><a href="#horarios" class="hover:text-white">Modalidad Entre Semana</a></li>
-                        <li><a href="#horarios" class="hover:text-white">Modalidad Sabatina</a></li>
+                    <div class="flex flex-col mb-4">
+                        <div class="flex items-baseline font-black text-2xl tracking-tight leading-none text-white">
+                            <span class="text-[#E53845]">BE</span>
+                            <span>help</span>
+                        </div>
+                        <span class="text-[9px] font-bold tracking-[0.25em] text-slate-400 uppercase mt-0.5">ASSESSORS</span>
+                        <span class="text-[9px] text-[#A7D6E2] font-semibold mt-0.5">¡Tus asesores en un click!</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Centro de capacitación en idiomas con modelo síncrono en línea, alineado al MCER y respaldado por la Red SEP-CONOCER. Villahermosa, Tabasco, México.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-3">Contacto Directo</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-green-400"></i>
+                            <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="hover:underline">9931382480</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-red-400"></i>
+                            <a href="mailto:behelp.assessors@gmail.com" class="hover:underline">behelp.assessors@gmail.com</a>
+                        </li>
                     </ul>
                 </div>
+
                 <div>
-                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Metodología</h5>
-                    <ul class="space-y-2">
-                        <li><a href="#metodologia" class="hover:text-white">Clases en Vivo Google Meet</a></li>
-                        <li><a href="#niveles" class="hover:text-white">Duración 3 Meses por Nivel</a></li>
-                        <li><a href="#precios" class="hover:text-white">Planes de Inversión</a></li>
-                    </ul>
+                    <h4 class="font-bold text-white text-sm mb-3">Síguenos en Redes Sociales</h4>
+                    <div class="flex gap-3 text-lg">
+                        <a href="https://www.facebook.com/share/1ExiCuDzca/" target="_blank" title="Facebook" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#E53845] text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@behelpassessors?_r=1&_t=ZS-96sYHSMi9Th" target="_blank" title="TikTok" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-slate-700 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="https://instagram.com/behelp.assessors" target="_blank" title="Instagram" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-pink-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" title="WhatsApp" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-green-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <h5 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Contacto</h5>
-                    <p class="mb-2"><i class="fa-solid fa-envelope text-blue-400 mr-1.5"></i> contacto@behelpassessors.com</p>
-                    <p><i class="fa-brands fa-whatsapp text-red-500 mr-1.5"></i> Atención por WhatsApp</p>
-                </div>
+
             </div>
 
-            <div class="pt-8 border-t border-slate-800 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
-                <p>© 2026 BEhelp Assessors. Todos los derechos reservados.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="hover:text-white">Términos y Condiciones</a>
-                    <a href="#" class="hover:text-white">Aviso de Privacidad</a>
-                </div>
+            <div class="pt-8 text-center text-xs text-slate-500">
+                <p>&copy; BEhelp Assessors. Todos los derechos reservados. Villahermosa, Tabasco, México.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Quick Placement Quiz Modal -->
+    <div id="quizModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 relative">
+            <button onclick="closeQuizModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-100 text-[#2B4C8C] rounded-xl flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-base">Test de Ubicación Rápido</h3>
+                    <p class="text-xs text-slate-500">BEhelp Assessors</p>
+                </div>
+            </div>
+            
+            <p class="text-xs text-slate-600">Responde estas 2 preguntas para sugerirte tu nivel ideal:</p>
+
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="font-bold text-slate-800 block mb-1">1. ¿Has estudiado antes el idioma?</label>
+                    <select id="quizPrev" class="w-full p-2.5 rounded-lg border border-slate-300">
+                        <option value="no">No, empiezo desde cero</option>
+                        <option value="basic">Sí, conozco cosas muy básicas</option>
+                        <option value="intermediate">Sí, entiendo la mayor parte de textos simples</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-bold text-slate-800 block mb-1">2. ¿Cuál es tu objetivo principal?</label>
+                    <select id="quizGoal" class="w-full p-2.5 rounded-lg border border-slate-300">
+                        <option value="travel">Viajes o pasatiempo</option>
+                        <option value="work">Mejora laboral / Certificación</option>
+                        <option value="school">Escolar / Académico</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="calcQuizResult()" class="w-full py-3 bg-[#2B4C8C] text-white font-bold text-xs rounded-xl hover:bg-blue-800 transition-colors">
+                Ver Recomendación
+            </button>
+
+            <div id="quizResult" class="hidden p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs space-y-2">
+                <p id="quizText" class="font-bold text-[#2B4C8C]"></p>
+                <a id="quizWaLink" href="https://wa.me/message/44Y6ZHMXQBDMG1" target="_blank" class="block text-center py-2 bg-green-600 text-white rounded-lg font-bold text-xs">
+                    Contactar para Examen Completo vía WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        // Mobile Drawer Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('flex');
         });
 
-        // Language Tab Switcher
-        function switchLanguageTab(lang) {
-            const engContent = document.getElementById('englishTabContent');
-            const freContent = document.getElementById('frenchTabContent');
-            const engBtn = document.getElementById('tabEnglishBtn');
-            const freBtn = document.getElementById('tabFrenchBtn');
-
-            if (lang === 'english') {
-                engContent.classList.remove('hidden');
-                freContent.classList.add('hidden');
-                engBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 bg-blue-600 text-white shadow-md";
-                freBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
-            } else {
-                freContent.classList.remove('hidden');
-                engContent.classList.add('hidden');
-                freBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 bg-rose-600 text-white shadow-md";
-                engBtn.className = "px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 text-slate-600 hover:text-slate-900";
-            }
-        }
-
-        // FAQ Toggle Accordion
-        function toggleFaq(id) {
-            const content = document.getElementById(`faqContent-${id}`);
-            const icon = document.getElementById(`faqIcon-${id}`);
-            
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        // Pre-select Schedule in Form
-        function preselectSchedule(scheduleName) {
-            const scheduleSelect = document.getElementById('scheduleSelect');
-            if (scheduleSelect) {
-                scheduleSelect.value = scheduleName;
-            }
-        }
-
         // Quiz Modal Logic
-        let selectedQuizLang = 'Inglés';
-
         function openQuizModal() {
             document.getElementById('quizModal').classList.remove('hidden');
-            document.getElementById('quizStep1').classList.remove('hidden');
-            document.getElementById('quizStep2').classList.add('hidden');
-            document.getElementById('quizResult').classList.add('hidden');
         }
 
         function closeQuizModal() {
             document.getElementById('quizModal').classList.add('hidden');
+            document.getElementById('quizResult').classList.add('hidden');
         }
 
-        function selectQuizLang(lang) {
-            selectedQuizLang = lang;
-            document.getElementById('quizStep1').classList.add('hidden');
-            document.getElementById('quizStep2').classList.remove('hidden');
-            document.getElementById('quizQuestionText').innerText = `¿Cómo evaluarías tu nivel en ${lang}?`;
+        function calcQuizResult() {
+            const prev = document.getElementById('quizPrev').value;
+            const textEl = document.getElementById('quizText');
+            const resEl = document.getElementById('quizResult');
+
+            if (prev === 'no') {
+                textEl.textContent = 'Te recomendamos iniciar en el Nivel A1.1 (Principiante desde Cero).';
+            } else if (prev === 'basic') {
+                textEl.textContent = 'Te recomendamos el Nivel A2.1 o solicitar examen diagnóstico gratuito.';
+            } else {
+                textEl.textContent = 'Te recomendamos realizar nuestro examen institucional de ubicación para nivel B1 o B2.';
+            }
+
+            resEl.classList.remove('hidden');
         }
 
-        function answerQuiz(option) {
-            document.getElementById('quizStep2').classList.add('hidden');
-            document.getElementById('quizResult').classList.remove('hidden');
-
-            const resultText = document.getElementById('recommendedLevel');
-            if (option === 1) resultText.innerText = `Nivel A1 (Principiante Cero) en ${selectedQuizLang}`;
-            else if (option === 2) resultText.innerText = `Nivel A2 (Elemental) en ${selectedQuizLang}`;
-            else if (option === 3) resultText.innerText = `Nivel B1 - B2 (Intermedio) en ${selectedQuizLang}`;
-            else resultText.innerText = `Nivel C1 (Avanzado) en ${selectedQuizLang}`;
-        }
-
-        // Lead Form Handler & Custom Toast
+        // Form Submission Redirect to WhatsApp
         function handleFormSubmit(e) {
             e.preventDefault();
-            
-            const toast = document.getElementById('toastNotification');
-            toast.classList.remove('hidden');
-            
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 6000);
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const course = document.getElementById('formCourse').value;
+            const comments = document.getElementById('formComments').value;
 
-            document.getElementById('leadForm').reset();
+            const text = `Hola BEhelp Assessors, me gustaría solicitar información para inscribirme.%0A%0A*Nombre:* ${encodeURIComponent(name)}%0A*WhatsApp:* ${encodeURIComponent(phone)}%0A*Curso de Interés:* ${encodeURIComponent(course)}%0A*Comentarios:* ${encodeURIComponent(comments)}`;
+            
+            window.open(`https://wa.me/message/44Y6ZHMXQBDMG1?text=${text}`, '_blank');
         }
     </script>
 </body>
